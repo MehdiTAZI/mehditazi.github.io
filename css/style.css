@@ -169,6 +169,9 @@
     border-bottom: 11px solid transparent;
 }
 
+
+
+
 @keyframes pulse-border {
     0% {
         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
