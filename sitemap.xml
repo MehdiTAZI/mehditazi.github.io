@@ -84,4 +84,12 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://tazimehdi.wordpress.com/</loc>
+    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
 </urlset>
