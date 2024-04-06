@@ -59,11 +59,10 @@
 
   .circular-image {
     /* Adjust width and height as needed, keeping them equal for a circle */
-    width: 300px; 
-    height: 300px;
+    width: 200px; 
+    height: 200px;
     border-radius: 50%;
     /* Optional styles */
-    border: 2px solid #ddd; /* Add a border if you like */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* A subtle shadow for some depth */
   }
 
