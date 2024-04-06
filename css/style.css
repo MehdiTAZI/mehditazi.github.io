@@ -58,13 +58,21 @@
 }
 
   .circular-image {
-    /* Adjust width and height as needed, keeping them equal for a circle */
-    width: 200px; 
-    height: 200px;
-    border-radius: 50%;
-    /* Optional styles */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* A subtle shadow for some depth */
+      width: 200px; /* Adjust the size as needed */
+      height: 200px; /* Adjust the size as needed */
+      border-radius: 50%; /* This makes the wrapper circular */
+      background: white; /* Background color for the circular border */
+      padding: 5px; /* Adjust the size of the white border */
+      box-sizing: border-box; /* Makes sure the padding is included in the width/height */
+      display: flex; /* Used to center the image in the div */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
   }
+.circular-image img {
+  width: 100%; /* Make the image fill the wrapper */
+  height: auto; /* Keep the image's aspect ratio */
+  border-radius: 50%; /* Circular image */
+}
 
 /*** Button ***/
 .btn {
