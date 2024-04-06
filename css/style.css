@@ -67,7 +67,7 @@
       align-items: center; /* Center vertically */
   }
 .circular-image img {
-  width: 100%; /* Make the image fill the wrapper */
+  width: 75%; /* Make the image fill the wrapper */
   height: auto; /* Keep the image's aspect ratio */
   border-radius: 50%; /* Circular image */
 }
