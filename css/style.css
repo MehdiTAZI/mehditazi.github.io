@@ -22,6 +22,12 @@
   background-color: #0A66C2;
   font-family: "SF Pro Text", Helvetica, sans-serif;
 }
+.libutton-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 /********** FOR LINKEDIN FOLLOW BUTTON **********/
 
 .back-to-top {
