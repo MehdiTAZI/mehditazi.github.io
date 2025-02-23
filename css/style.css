@@ -27,9 +27,9 @@
   color: #343434;
 }
 
-
-
-
+html, body {
+  overflow-x: hidden;
+}
 
 
 .section-dark  h1, 
