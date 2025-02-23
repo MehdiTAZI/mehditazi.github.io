@@ -2,8 +2,61 @@
 :root {
     --primary: #0483de;
     --secondary: #FFC448;
-    --light: #FAFAFB;
-    --dark: #12141D;
+    --light: #EEFEF6;
+    --dark: #212221;
+}
+
+
+.section-dark {
+  background-color: #212221;
+  color: #FFFFFF;
+}
+
+.section-light {
+  background-color: #FFFFFF;
+  color: #212221;
+}
+
+
+/* Pour la section sombre */
+.section-dark h1, 
+.section-dark h2, 
+.section-dark h3, 
+.section-dark h4, 
+.section-dark h5, 
+.section-dark h6,
+.section-dark p {
+    color: #FFFFFF;  /* Blanc pour le texte sur fond foncé */
+}
+
+/* Pour la section claire */
+.section-light h1, 
+.section-light h2, 
+.section-light h3, 
+.section-light h4, 
+.section-light h5, 
+.section-light h6,
+.section-light p {
+    color: #212221;  /* Gris foncé ou une couleur qui contraste avec le fond clair */
+}
+
+
+.section-dark, .section-light {
+    position: relative;
+    background-clip: content-box;
+    padding: 0 15px; /* Garde le padding Bootstrap */
+}
+
+.section-dark::before, 
+.section-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -50vw;
+    right: -50vw;
+    background-color: inherit;
+    z-index: -1;
 }
 
 /********** FOR LINKEDIN FOLLOW BUTTON **********/
@@ -27,6 +80,31 @@
   justify-content: flex-end;
 }
 
+.linkedin-btn {
+      background-color: #0A66C2;
+      color: #fff;
+      border-radius: 16px;
+      padding: 7px 15px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+
+.linkedin-btn li:hover,
+.linkedin-btn li.active {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.profile-img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      object-position: center top; /* Adjusts the image to show the top portion */
+      border-radius: 50%;
+      border: 5px solid #fff;
+    }
 
 /********** FOR LINKEDIN FOLLOW BUTTON **********/
 
@@ -146,6 +224,44 @@
     padding-top: 6rem;
     background: url(../img/bg-header.png) left top no-repeat;
 }
+/*** 
+#about {
+    min-height: 100vh;
+}
+
+#professional {
+    min-height: 100vh;
+}
+
+#testimonial {
+    min-height: 100vh;
+}
+
+#business {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background-color: #212221; 
+}
+
+#business .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#business .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#business .col-md-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+***/
+
+
+
 
 .typed-cursor {
     font-size: 30px;
