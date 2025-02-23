@@ -17,26 +17,62 @@
   color: #212221;
 }
 
+.section-light-dark {
+  background-color: #343434;
+  color: #FFFFFF;
+}
 
-/* Pour la section sombre */
-.section-dark h1, 
-.section-dark h2, 
-.section-dark h3, 
-.section-dark h4, 
-.section-dark h5, 
-.section-dark h6,
-.section-dark p {
+.section-dark-light {
+  background-color: #FFFFFF;
+  color: #343434;
+}
+
+
+
+
+
+
+.section-dark  h1, 
+.section-dark  h2, 
+.section-dark  h3, 
+.section-dark  h4, 
+.section-dark  h5, 
+.section-dark  h6,
+.section-dark  p {
     color: #FFFFFF;  /* Blanc pour le texte sur fond foncé */
 }
 
 /* Pour la section claire */
-.section-light h1, 
-.section-light h2, 
-.section-light h3, 
-.section-light h4, 
-.section-light h5, 
-.section-light h6,
-.section-light p {
+.section-light  h1, 
+.section-light  h2, 
+.section-light  h3, 
+.section-light  h4, 
+.section-light  h5, 
+.section-light  h6,
+.section-light  p {
+    color: #212221;  /* Gris foncé ou une couleur qui contraste avec le fond clair */
+}
+
+
+/* Pour la section sombre */
+.section-light-dark h1, 
+.section-light-dark h2, 
+.section-light-dark h3, 
+.section-light-dark h4, 
+.section-light-dark h5, 
+.section-light-dark h6,
+.section-light-dark p {
+    color: #FFFFFF;  /* Blanc pour le texte sur fond foncé */
+}
+
+/* Pour la section claire */
+.section-dark-light h1, 
+.section-dark-light h2, 
+.section-dark-light h3, 
+.section-dark-light h4, 
+.section-dark-light h5, 
+.section-dark-light h6,
+.section-dark-light p {
     color: #212221;  /* Gris foncé ou une couleur qui contraste avec le fond clair */
 }
 
@@ -238,29 +274,11 @@
 }
 
 #business {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    background-color: #212221; 
+    min-height: 100vh;
 }
 
-#business .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-#business .row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-#business .col-md-6 {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 ***/
-
-
 
 
 .typed-cursor {
