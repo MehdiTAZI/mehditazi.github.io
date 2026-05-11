@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
- <style>
-        .libutton {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 7px;
-          text-align: center;
-          outline: none;
-          text-decoration: none !important;
-          color: #ffffff !important;
-          width: 200px;
-          height: 32px;
-          border-radius: 16px;
-          background-color: #0A66C2;
-          font-family: "SF Pro Text", Helvetica, sans-serif;
-        }
-      </style>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta http-equiv="Content-Language" content="en-en" />
-    <title>Mehdi TAZI - Personal Page</title>
+    <title>Mehdi TAZI - Data & Cloud Architect</title>
     <meta content="The best way to predict the future is to create it." name="quote">
-    <meta name="description" content="This is 'Mehdi TAZI' Personal Page. You'll find here some articles about software engineering, entrepreneur, investments, travel, economy, science and music." />
+    <meta name="description" content="Mehdi TAZI is an Entrepreneur, CTO and Data & Cloud Architect from Fez, Morocco living in Paris, France, focused on technical strategy, modern data platforms, lakehouse architecture, governance and engineering leadership." />
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Mehdi TAZI, Mehdi, TAZI, IT INSIGHT, Entrepreneur, Businessman, Investor, Investisseur, Auteur, Author, Data Architect, Chief Technical Officer, Architecte de données,Developper, Developpeur, Big Data, BigData, Cloud, AWS, AI, DataScience, ML, Machine Learning, Computer, Informatique, Science, Enginner, Ingenieur, Datalake ,NoSQL, MongoDB, Cloud, JAVA, Cassandra, Programmation, Traveler, Voyageur, Disributed Programming, Programmation Distribue, World Trip, Tour du monde, Personal Page, Page Personel, Site Web, Web Site, Web, Site, Resume, CV, C.V, Skills, Morocco, Maroc, France" name="keywords">
     <meta name="url" content="http://tazimehdi.com/"/>
@@ -38,7 +21,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -53,7 +36,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css?v=20260512" rel="stylesheet">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
@@ -67,20 +50,19 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="#home" class="navbar-brand fw-bold">Mehdi TAZI</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About Me</a>
-                <a href="#professional" class="nav-item nav-link">Professional</a>
-                <a href="#business" class="nav-item nav-link">Business</a>
-            </div>
-            <div class="navbar-nav me-auto py-0">
-                <!--<a href="#personal" class="nav-item nav-link">Personal</a>-->
-                <a href="#testimonial" class="nav-item nav-link">Testimonial</a>
+        <div class="collapse navbar-collapse justify-content-end py-4 py-lg-0" id="navbarCollapse">
+            <div class="navbar-nav align-items-lg-center py-0">
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#professional" class="nav-item nav-link">Expertise</a>
+                <a href="ventures.html" class="nav-item nav-link">Ventures</a>
+                <a href="#testimonial" class="nav-item nav-link">Testimonials</a>
+                <a href="perspectives.html" class="nav-item nav-link">Perspective</a>
+                <a href="#contact" class="btn btn-primary ms-lg-3 px-4">Contact</a>
             </div>
         </div>
     </nav>
@@ -88,32 +70,34 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid section-light my-6 mt-0" id="home">
+    <div class="container-fluid section-light hero-section mt-0" id="home">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-4 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">Mehdi TAZI</h1>
+            <div class="row g-5 align-items-center min-vh-100">
+                <div class="col-lg-7 py-6 pb-0 pt-lg-0">
+                    <p class="eyebrow mb-3">Data & Cloud Architecture</p>
+                    <h1 class="display-3 mb-4">Mehdi TAZI</h1>
                     <h2 class="typed-text-output d-inline"></h2>
                     <div class="typed-text d-none">Entrepreneur, Data Architect, Chief Technical Officer, Author</div>
-                    <div class="d-flex align-items-center pt-5">
-                        
-                            <a href="#professional nav-item nav-link active" >
-                                <button type="button" class="btn-play bi bi-linkedin">
-                                    
-                                </button>
-                                <span>
-                                </span>
-                                </button>
-                            </a>
-                        
-                            <div>
-                                <a href="#professional" class ="mx-3 nav-item nav-link active"> <b>Consulting recruiters press here</b></a>
-                            </div>
+                    <p class="hero-lead mt-4 mb-5">I help companies design governed, scalable data platforms across cloud, lakehouse and distributed systems environments.</p>
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a href="#professional" class="btn btn-primary btn-lg px-4">Work with me</a>
+                        <a href="http://cv.tazimehdi.com" class="btn btn-outline-dark btn-lg px-4" download="Mehdi-TAZI-resume.pdf">Download CV</a>
+                        <a href="http://linkedin.tazimehdi.com/" target="_blank" class="hero-social" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="hero-metrics mt-5">
+                        <div><strong>14+</strong><span>years in data systems</span></div>
+                        <div><strong>100+</strong><span>IT projects delivered</span></div>
+                        <div><strong>Author</strong><span>books and technical articles</span></div>
                     </div>
                 </div>
-                <div class="col-lg-6" >
-                    <img src="img/profile.jpeg" alt="Mehdi TAZI Profile" class="profile-img mb-3">
+                <div class="col-lg-5">
+                    <div class="profile-panel">
+                        <img src="img/profile.jpeg" alt="Mehdi TAZI Profile" class="profile-img mb-3">
+                        <div class="profile-note">
+                            <span>Current focus</span>
+                            <strong>Modern data platforms, governance, observability and cloud architecture.</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,37 +105,43 @@
     <!-- Header End -->
 
     <!-- About Start -->
-    <div class="container-xxl section-dark py-6" id="about">
+    <div class="container-xxl section-light about-section py-6" id="about">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Who I'am</h1>
-                    <p class="mb-4">Hello, Welcome to my portfolio website! My name is Mehdi TAZI, I'm an <b>Entrepreneur, Chief Technical Officer & Data Architect</b> from Fez, Morocco living in Paris, France.</p>
-                    <p class="mb-4">I have an Engineering degree in Software Engineering & Master 2 degree in <b>Distributed information systems</b>, I m also an academic <b>(a PhD Student)</b>, my researches focus on the definition of <a href="https://www.academia.edu/40122865/ABSTRACT_LIMITATIONS_and_PROBLEMS_CONTACTS" target="_blank" >'sensors virtualization and composition approach for the Internet of Things'</a>. I am also an <b>author and reviewer</b> of articles and books mainly related to the field of technology and data architecture, sharing my expertise and insights with a wider audience.</p>
-                    <p class="mb-4"><p class="mb-4">Currently I work as a <b>Big Data/Cloud Architect</b>, my role involves in designing and evolving a Data Platform, incorporating concepts like Datamesh and LakeHouse predominantly on AWS in a multi-cloud context with high focus on governance, data quality and UX. My daily tasks include setting-up technical, functional, and organizational solutions, enhancing data platform tooling according to the company strategy, setting-up guidelines, making the platform observable and well-governed, onboarding new teams into the platform, defining or validating their architectures, and assisting in the implementation of their use cases with a focus on cost and performance optimizations. My role involves also in managing projects mainly using agile methodologies.</p>    
-                    <p class="mb-4">I've been passionate about computer science since the age of 14 and being a software architect is more than just a job for me. In addition, I find satisfaction in building and investing in businesses related to <b>Software, Real estate and Stocks</b>.</p>                                       
-                    <p class="mb-4">Aisde from Business & Computer science fields, I enjoy learning new things mainly in the <b>Economy, Science & Philosophy fields</b>. During my time off, I enjoy traveling and discovering new cultures.</p>                 
+                <div class="col-lg-6">
+                    <p class="eyebrow mb-3">About</p>
+                    <h1 class="display-5 mb-5">Architect, CTO and technical advisor</h1>
+                    <p class="mb-4">I am an <b>Entrepreneur, Chief Technical Officer and Data & Cloud Architect</b> from Fez, Morocco, living in Paris, France. My work focuses on designing, evolving and operating modern data platforms across lakehouse, data mesh and distributed systems environments.</p>
+                    <p class="mb-4">I hold an engineering degree in software engineering and a Master 2 in <b>distributed information systems</b>. My academic research explores sensor virtualization and composition approaches for Internet of Things systems, a topic that shaped my interest in complex, distributed and interoperable architectures.</p>
+                    <p class="mb-4">As a CTO, I work on the link between technology, product and business strategy: shaping technical roadmaps, making architecture decisions, setting engineering standards, reducing delivery risk and helping teams turn complex ideas into maintainable systems.</p>
+                    <p class="mb-4">Today, I help teams define technical, functional and organizational solutions for data platforms, especially in cloud and multi-cloud contexts. My work covers architecture guidelines, governance, data quality, observability, onboarding of new teams, architecture reviews, cost and performance optimization, and delivery coordination with agile practices.</p>
+                    <div class="expertise-tags mt-4">
+                        <span>Data Platform Architecture</span>
+                        <span>Lakehouse</span>
+                        <span>Cloud & Multi-cloud</span>
+                        <span>Data Governance</span>
+                        <span>Observability</span>
+                        <span>Technical Leadership</span>
+                        <span>Technical Strategy</span>
+                    </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-6">
                     <div class="row g-3 mb-4">
                         <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/me-1.jpg" alt="">
+                            <img class="img-fluid rounded about-photo" src="img/me-1.jpg" alt="Travel photography by Mehdi TAZI">
                         </div>
                         <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/me-2.jpg" alt="">
+                            <img class="img-fluid rounded about-photo" src="img/me-2.jpg" alt="Travel photography by Mehdi TAZI">
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Successfull Businesses & Investments</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">6</h2>
+                    <div class="about-note">
+                        <h5>Publications, ventures & travel notes</h5>
+                        <p>Beyond consulting and architecture, I write and review technical books and articles, mainly around technology, data and software architecture. I also build and invest in business initiatives across software, real estate and financial markets, while keeping a strong personal interest in economy, science, philosophy and travel.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-3">
+                            <a href="ventures.html" class="btn btn-primary px-4">Explore ventures</a>
+                            <a href="perspectives.html" class="btn btn-outline-dark px-4">Places & Perspectives</a>
+                        </div>
                     </div>
-                    <p class="mb-4">I have been fortunate to rise successful businesses and investments, which have given me valuable experience and insight into the world of entrepreneurship. I'm always on the lookout for new and innovative opportunities.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Achievements: Projects, Authored Books, etc</h5>
-                        <h1 class="text-primary fw-bold mb-0">&#x221E</h1><!-- <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">100</h2>-->
-                    </div>
-                    <p class="mb-4">Throughout my career, I have been dedicated to delivering high-quality work and have successfully completed over 100 IT Projects to date, showcasing my skills and abilities.</p>
-                    <p class="mb-4">I also have a dedication for simplifying complex ideas. I've authored a book and reviewed others about software engineering and data architecture fields, while also sharing insights on Medium and synthesized publications on LinkedIn to make this field more accessible</p>
 
                     <div class="row g-3 mb-3">
                         <div class="col-sm-3">
@@ -164,38 +154,22 @@
                             <a href="https://medium.com/@mehdi.tazi" target="_blank" ><img class="img-fluid rounded" src="img/medium_articles.png" alt="book reviewer"></a>
                         </div>
                     </div>
-                 
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Countries Visited</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">44</h2>
-                    </div>
-                    <p class="mb-0">I have a passion for exploring new cultures and have been fortunate to visit 44 countries so far, broadening my perspectives and gaining valuable experiences along the way.</p>
-                 
                 </div>
             </div>
-            <div class="d-flex pt-12">
-                <!-- <a class="btn btn-square btn-primary me-2" target="_blank" href="https://tazimehdi.wordpress.com/"><i class="fab fa-wordpress"></i></a> -->
-                <!-- https://www.flickr.com/photos/tazimehdi/albums-->
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="http://blog.tazimehdi.com" ><i class="fab fa-medium"></i></a> <!-- https://medium.com/@mehdi.tazi -->
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="http://github.tazimehdi.com" ><i class="fab fa-github"></i></a> <!-- https://github.com/MehdiTAZI -->
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="http://linkedin.tazimehdi.com/"><i class="fab fa-linkedin-in"></i></a> <!-- https://www.linkedin.com/in/mehditazi85 -->
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="http://author.tazimehdi.com" ><i class="fab fa-amazon"></i></a> <!-- https://www.amazon.com/author/mehditazi -->
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="http://itinsight.fr"><i class="fab bi-window"></i></a>
-
-
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="mailto:mehdi@tazimehdi.com"><i class="fab bi-envelope"></i></a>
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="tel:+33674290854"><i class="fab bi-telephone"></i></a>
-                <a class="btn btn-square btn-primary me-2" target="_blank" href="http://phone.tazimehdi.com"><i class="fab fa-whatsapp"></i></a> <!-- https://wa.me/33674290854?text=Hello%20Mehdi!,%20I'm%20contacting%20you%20because%20 -->
-            </div>
-    
         </div>
     </div>
     <!-- About End -->
 
-
     <!-- Expertise Start -->
     <div class="container-xxl section-light py-6 pb-5 " id="professional">
         <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <p class="eyebrow mb-3">Expertise</p>
+                    <h1 class="display-5 mb-3">Professional expertise</h1>
+                    <p class="travel-lead mb-0">A practical view of the domains where I help teams make architecture decisions, structure platforms and deliver reliable data products.</p>
+                </div>
+            </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 
@@ -206,142 +180,78 @@
                         </div>
                         <h3 class="lh-base mb-0">of working experience in data & distributed systems</h3>
                     </div>
-                    <p class="mb-4">In this section, I'll summarize my professional education, experiences and skills.</p>
-                    <h3 class="mb-4">My Skills</h3>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Distributed Systems</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">BigData Platforms<text class="skills-small-text"> ( Hadoop, Spark.. )</text></h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Data Architecture</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Databases<text class="skills-small-text"> ( NoSQL, RDBMS.. )</text></h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Data Governance</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+	                    <p class="mb-4">A focused view of the professional capabilities I bring to data platform strategy, architecture and delivery.</p>
+	                    <h3 class="mb-4">Core expertise</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-project-diagram"></i></div>
+                            <div>
+                                <h6>Data platform architecture</h6>
+                                <p>Lakehouse, data mesh, governance, security and operating models.</p>
+                                <div class="expertise-card-tags"><span>Datalake</span><span>Lakehouse</span><span>Data Mesh</span><span>Governance</span></div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Public Cloud</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-cloud"></i></div>
+                            <div>
+                                <h6>Cloud & hybrid platforms</h6>
+                                <p>Architecture choices across AWS, Azure, on-premise and multi-cloud environments.</p>
+                                <div class="expertise-card-tags"><span>AWS</span><span>Azure</span><span>GCP</span><span>Cloudera</span><span>Hybrid</span></div>
                             </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Streaming Platforms</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-stream"></i></div>
+                            <div>
+                                <h6>Distributed data systems</h6>
+                                <p>Batch, streaming, storage, processing and resilient distributed patterns.</p>
+                                <div class="expertise-card-tags"><span>Spark</span><span>Kafka</span><span>Storage</span></div>
                             </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Solutions Architecture</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-cogs"></i></div>
+                            <div>
+                                <h6>Industrialisation & DevOps</h6>
+                                <p>Automation, CI/CD, infrastructure as code, observability and platform reliability.</p>
+                                <div class="expertise-card-tags"><span>Terraform</span><span>CI/CD</span><span>Monitoring</span></div>
                             </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Software Development</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-database"></i></div>
+                            <div>
+                                <h6>Data engineering delivery</h6>
+                                <p>Ingestion, modeling, transformation, quality controls and consumption layers.</p>
+                                <div class="expertise-card-tags"><span>Modeling</span><span>Data Quality</span><span>Controls</span><span>APIs</span></div>
                             </div>
-                            <div class="skill mb-2">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Industrialisation & DevOps</h6>
-                                    <h6 class="font-weight-bold"></h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-users-cog"></i></div>
+                            <div>
+                                <h6>CTO & technical leadership</h6>
+                                <p>Technology strategy, roadmap framing, architecture governance, team enablement and delivery alignment.</p>
+                                <div class="expertise-card-tags"><span>CTO</span><span>Roadmap</span><span>Governance</span></div>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex pt-12">
-                        <h1 class="mb-0 me-2 my-2"> </h1>
+	                    <div class="profile-links mt-5">
+	                        <h6 class="mb-3">Professional links</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <a class="btn btn-square btn-primary" target="_blank" href="http://blog.tazimehdi.com" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" href="http://github.tazimehdi.com" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" href="http://linkedin.tazimehdi.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" href="http://author.tazimehdi.com" aria-label="Amazon author page"><i class="fab fa-amazon"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" href="http://itinsight.fr" aria-label="IT Insight"><i class="bi bi-window"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" href="mailto:mehdi@tazimehdi.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" href="tel:+33674290854" aria-label="Phone"><i class="bi bi-telephone"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" href="http://phone.tazimehdi.com" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="http://cv.tazimehdi.com" class="btn btn-warning px-4" download="Mehdi-TAZI-resume.pdf">Download CV</a>
+                        </div>
                     </div>
-                    <div class="d-flex pt-12">
-                        <h1 class="mb-0 me-2 my-2"> </h1>
-                    </div>
-                    <div class="d-flex pt-12">
-                        <h1 class="mb-0 me-2 my-2"> </h1>
-                    </div>
-                    <div class="d-flex pt-12">
-                        <h6 class="mb-0 me-2 my-2">More info:</h6>
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="http://blog.tazimehdi.com" ><i class="fab fa-medium"></i></a> <!-- https://medium.com/@mehdi.tazi -->
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="http://github.tazimehdi.com" ><i class="fab fa-github"></i></a> <!-- https://github.com/MehdiTAZI -->
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="http://linkedin.tazimehdi.com/"><i class="fab fa-linkedin-in"></i></a> <!-- https://www.linkedin.com/in/mehditazi85 -->
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="http://author.tazimehdi.com" ><i class="fab fa-amazon"></i></a> <!-- https://www.amazon.com/author/mehditazi -->
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="http://itinsight.fr"><i class="fab bi-window"></i></a>
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="mailto:mehdi@tazimehdi.com"><i class="fab bi-envelope"></i></a>
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="tel:+33674290854"><i class="fab bi-telephone"></i></a>
-                        <a class="btn btn-square btn-primary me-2" target="_blank" href="http://phone.tazimehdi.com"><i class="fab fa-whatsapp"></i></a> <!-- https://wa.me/33674290854?text=Hello%20Mehdi!,%20I'm%20contacting%20you%20because%20 -->
-                        <a href="http://cv.tazimehdi.com" download="Mehdi-TAZI-resume.pdf"> <!-- https://tazimehdi.com/resources/Mehdi-TAZI-resume-abstract-en.pdf -->
-                            <button type="button" class="btn btn-warning">Download MY CV</button>
-                        </a>
-                    </div>
-                <div class="pt-12">
-                    <p></p>
-                </div>
-                <div class="d-flex justify-content-end pt-12">
-                    
-                    <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mehditazi85" target="_blank" class="linkedin-btn">
-                    <i class="fab fa-linkedin"></i> Follow Me On LinkedIn
-                    </a>
-                </div>
 
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <ul class="nav nav-pills justify-content-start flex-wrap rounded border border-2 border-primary mb-5">
-                        <li class="nav-item flex-grow-1 text-center">
-                            <button class="nav-link px-1 py-2 fs-7 active" data-bs-toggle="pill" href="#tab-1">Experiences</button>
+	                    <ul class="nav nav-pills justify-content-start flex-wrap rounded border border-2 border-primary mb-5">
+	                        <li class="nav-item flex-grow-1 text-center">
+	                            <button class="nav-link px-1 py-2 fs-7 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
                         </li>
                         <li class="nav-item flex-grow-1 text-center">
                             <button class="nav-link px-1 py-2 fs-7" data-bs-toggle="pill" href="#tab-2">Education</button>
@@ -364,28 +274,28 @@
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2017 - 2023</p>
                                     <h6 class="mb-0">Founder</h6>
-                                    <text class="skills-small-text">Leading the company, responsible for the Consulting and Trainings offers. Offering the services for big customers like : Engie, Decathlon, AXA, Societe General, La Poste, BNP, EDF...</text>
+                                    <p class="skills-small-text">Leading the company and managing consulting and training offers for customers such as Engie, Decathlon, AXA, Societe Generale, La Poste, BNP and EDF.</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>XXXX</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2022 - 2025</p>
                                     <h6 class="mb-0">Senior Data Architect & CTO</h6>
-                                    <text class="skills-small-text">Design the data platform architecture & establish it roadmap, Design data solutions architecture and help implementing it, Accompany teams to implement their use cases.</text>
+                                    <p class="skills-small-text">Designing the data platform architecture and roadmap, validating solution architecture, and supporting teams during implementation.</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>Engie</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2018 - 2022</p>
                                     <h6 class="mb-0">Principal BigData Cloud Architect</h6>
-                                    <text class="skills-small-text">Design the data platform, implement it main features & it tranversal tooling, Design solutions achitectures, accompany teams onboarding their use cases of the big data platform, Training teams.</text>
+                                    <p class="skills-small-text">Designed the data platform, implemented core features and transversal tooling, supported onboarding, and trained teams.</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>AXA</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2017 - 2018</p>
                                     <h6 class="mb-0">Senior Big Data Architect</h6>
-                                    <text class="skills-small-text">Administration of AXA cloudera clusters, Design DevOPS & Automation solutions, Implement platform & infrastructure features.</text>
+                                    <p class="skills-small-text">Administered AXA Cloudera clusters, designed DevOps and automation solutions, and implemented platform and infrastructure features.</p>
                                 </div>
                             </div>
                         </div>
@@ -396,28 +306,28 @@
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2016 - </p>
                                     <h6 class="mb-0">UPEC PARIS EST</h6>
-                                    <text class="skills-small-text">Thesis : Internet of Things virtualization for cyber physical mobile systems composition. For more information you can check <a target="_blank" href="https://www.slideshare.net/tazimehdi/iot-virtualization-poster">this poster</a></text>
+                                    <p class="skills-small-text">Thesis: Internet of Things virtualization for cyber-physical mobile systems composition. For more information, see <a target="_blank" href="https://www.slideshare.net/tazimehdi/iot-virtualization-poster">this poster</a>.</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>Master 2 MIAGE</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2010 - 2011</p>
                                     <h6 class="mb-0">UPEC PARIS EST - ISIDIS</h6>
-                                    <text class="skills-small-text">Specialized in Distributed information systems and Management</text>
+                                    <p class="skills-small-text">Specialized in distributed information systems and management.</p>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5>Softwae Engineering</h5>
+                                    <h5>Software Engineering</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2006 - 2010</p>
                                     <h6 class="mb-0">ESISA</h6>
-                                    <text class="skills-small-text">Specialized in software engineering</text>
+                                    <p class="skills-small-text">Specialized in software engineering.</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>Certifications</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2000 - 2045</p>
                                     <h6 class="mb-0">15+ Certifications</h6>
-                                    <text class="skills-small-text">Obtained certifications in AWS, Hadoop, Datascience, MongoDB, C*, Architecture, Scala & Java, Spring...</text>
+                                    <p class="skills-small-text">Obtained certifications in AWS, Hadoop, data science, MongoDB, Cassandra, architecture, Scala, Java and Spring.</p>
                                 </div>
                             </div>
                         </div>
@@ -465,7 +375,7 @@
                             <div class="row gy-5 gx-4">
                                 <div class="card-body col-sm-12">
                                     
-                                    <p><strong>- Plateforms :</strong> AWS, Azure, Databricks, Dataiku, Cloudera, Confluent, Aiven, etc.</p>
+                                    <p><strong>- Platforms:</strong> AWS, Azure, Databricks, Dataiku, Cloudera, Confluent, Aiven, etc.</p>
 
                                     <p><strong>- Storage & Format:</strong> NOSQL: Cassandra, MongoDB, DynamoDB, CosmosDB, HBase, Redis, Postgres, RDS. FILE & Object storage : HDFS, S3, ADLS2, GCS. FORMAT : DeltaLake, IceBerg, Parquet, YAML, AVRO, CSV, XML, JSON, etc.</p>
 
@@ -485,69 +395,38 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
+	        </div>
+	    </div>
     </div>
     <!-- Expertise End -->
 
 
-    <!-- Business Start -->
-    <div class="container-xxl section-dark my-5 py-6" id="business">
-        <div class="container-fluid py-5">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Entrepreships & Investments</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-4" target="_blank" href="mailto:mehdi@tazimehdi.com"><i class="fab bi-envelope"></i></a>
-                    <a class="btn btn-primary py-3 px-4" target="_blank" href="https://wa.me/33674290854?text=Hello%20Mehdi!,%20I'm%20contacting%20you%20because%20"><i class="fab fa-whatsapp"></i></a>    
-                </div>
-            </div>           
-                <div class="row g-4 d-flex align-items-stretch">
-                    <!-- TAZI GROUP -->
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="business-item d-flex flex-column flex-sm-row section-light-dark rounded h-100 p-4 p-lg-5">
-                            <div class="bg-icon flex-shrink-0 mb-3">
-                                <i class="fa fa-code-branch fa-2x"></i>
-                            </div>
-                            <div class="ms-sm-4">
-                                <h4 class="mb-3">TAZI GROUP</h4>
-                                <h6 class="mb-3">Contact us <span class="text-primary"><a href="mailto:tazigroup@itinsight.fr" target="_blank">on this email</a></span></h6>
-                                <span>
-                                    TAZI GROUP is a Holding company that invests in stocks, start-ups and owns other companies.
-                                    We are focused on supporting and investing in small-scale businesses. If you are seeking an investor who is committed to your success, feel free to reach out to us. We are open to discussing opportunities and finding ways to help you reach your goals.
-                                </span>
-                            </div>
-                        </div>
+    <!-- Ventures Start -->
+    <div class="container-xxl section-light ventures-teaser-section my-5 py-6" id="business">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-7">
+                    <p class="eyebrow mb-3">Ventures</p>
+                    <h1 class="display-5 mb-4">Business initiatives, kept separate from the professional profile</h1>
+                    <p class="travel-lead mb-4">Beyond architecture and advisory work, I build and invest in selected initiatives across software, long-term company building and real estate. The details live on a dedicated page so this homepage stays focused on expertise and consulting work.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="ventures.html" class="btn btn-primary px-4">Explore ventures</a>
+                        <a href="mailto:mehdi@tazimehdi.com" class="btn btn-outline-dark px-4">Discuss an initiative</a>
                     </div>
-                    <!-- TAZI INVEST -->
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="business-item d-flex flex-column flex-sm-row section-dark-light rounded h-100 p-4 p-lg-5">
-                            <div class="bg-icon flex-shrink-0 mb-3">
-                                <i class="fa fa-crop-alt fa-2x"></i>
-                            </div>
-                            <div class="ms-sm-4">
-                                <h4 class="mb-3">TAZI INVEST</h4>
-                                <h6 class="mb-3">Contact us <span class=""><a href="mailto:taziinvest@itinsight.fr" target="_blank">on this email</a></span></h6>
-                                <span>
-                                    TAZI INVEST is a real estate company specialized in buying, renovating, and renting properties.
-                                    We offer full services and guidance to help you find the perfect property.
-                                </span>
-                            </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="ventures-teaser-panel">
+                        <div>
+                            <span>Software & advisory</span>
+                            <strong>Brainlyze</strong>
                         </div>
-                    </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="business-item d-flex flex-column flex-sm-row section-light-dark rounded h-100 p-4 p-lg-5">
-                            <div class="bg-icon flex-shrink-0 mb-3">
-                                <i class="fa fa-crop-alt fa-2x"></i>
-                            </div>
-                            <div class="ms-sm-4">
-                                <h4 class="mb-3">Brainlyze</h4>
-                                <h6 class="mb-3">Visit us <span class=""><a href="http://brainlyze.com" target="_blank">on this website</a></span></h6>
-                                <span>
-                                    Brainlyze is a leading consulting company specializing in modern DATA, AI, and cutting-edge platform solutions. We provide comprehensive consulting services tailored to meet your unique business needs, from strategic data architecture and intelligent cloud solutions to advanced AI implementations and platform optimizations.
-                                </span>
-                            </div>
+                        <div>
+                            <span>Long-term initiatives</span>
+                            <strong>TAZI GROUP</strong>
+                        </div>
+                        <div>
+                            <span>Real estate projects</span>
+                            <strong>TAZI INVEST</strong>
                         </div>
                     </div>
                 </div>
@@ -555,10 +434,12 @@
         </div>
     </div>
 
-    <!-- Testimonial Start -->
+    <!-- Ventures End -->
+
+    <!-- Testimonials Start -->
     <div class="container-xxl section-light py-5 my-5" id="testimonial">
         <div class="container-fluid py-5">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Customer feedback</h1>
+	            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Testimonials</h1>
             <div class="row justify-content-center">
                 <div class="col-lg-3 d-none d-lg-block">
                     <div class="testimonial-left h-100">
@@ -617,7 +498,25 @@
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Testimonials End -->
+
+    <!-- Contact CTA Start -->
+    <div class="container-xxl section-light contact-cta-section py-5" id="contact">
+        <div class="container">
+            <div class="contact-cta">
+                <div>
+                    <p class="eyebrow mb-2">Contact</p>
+                    <h2 class="mb-2">Need help with data architecture or platform strategy?</h2>
+                    <p class="mb-0">I am open to technical advisory, architecture reviews and data platform consulting conversations.</p>
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="mailto:mehdi@tazimehdi.com" class="btn btn-primary px-4">Email me</a>
+                    <a href="http://linkedin.tazimehdi.com/" target="_blank" class="btn btn-outline-dark px-4">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact CTA End -->
 
 
 
@@ -629,14 +528,11 @@
                         &copy; <a class="border-bottom text-secondary" href="#">tazimehdi.com</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <text class="small-text" style= "font-size: 8px;>Designed By <a class="border-bottom text-secondary style= "font-size: 8px;"href="https://htmlcodex.com">HTML Codex</a>
-                        Distributed By: <a class="border-bottom" style= "font-size: 8px;" href="https://themewagon.com" target="_blank">ThemeWagon</a></text>
+                        <small class="small-text">Designed by Mehdi TAZI.</small>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <!-- Copyright End -->
 
 
@@ -655,9 +551,8 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20260512"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
