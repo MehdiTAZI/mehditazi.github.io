@@ -4,8 +4,14 @@
     // Spinner
     var spinner = function () {
         setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
+            var $spinner = $('#spinner');
+
+            if ($spinner.length > 0) {
+                $spinner.removeClass('show').css('pointer-events', 'none');
+
+                setTimeout(function () {
+                    $spinner.remove();
+                }, 350);
             }
         }, 1);
     };
@@ -81,7 +87,6 @@
     $('.btn-play').click(function () {
         $videoSrc = $(this).data("src");
     });
-    console.log($videoSrc);
     $('#videoModal').on('shown.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
     })
@@ -200,7 +205,6 @@
 
     if ($('#travelMap').length && typeof jsVectorMap !== 'undefined') {
         var visitedCodes = Object.keys(visitedCountries);
-        var albumCache = {};
         var $albumModal = $('#travelAlbumModal');
         var $albumTitle = $('#travelAlbumTitle');
         var $albumBody = $('#travelAlbumBody');
@@ -210,6 +214,59 @@
             : null;
         var travelAlbumData = null;
         var travelAlbumDataRequest = null;
+        var albumEmbedCache = {};
+
+        var closeTravelAlbumModal = function() {
+            if (!$albumModal.length) {
+                return;
+            }
+
+            if (travelAlbumModal) {
+                travelAlbumModal.hide();
+                return;
+            }
+
+            $albumModal.removeClass('show').attr('aria-hidden', 'true').css('display', 'none');
+            $('body').removeClass('modal-open').css({
+                overflow: '',
+                paddingRight: ''
+            });
+            $('.modal-backdrop.travel-album-backdrop').remove();
+        };
+
+        var openTravelAlbumModal = function() {
+            if (!$albumModal.length) {
+                return;
+            }
+
+            if (travelAlbumModal) {
+                travelAlbumModal.show();
+                return;
+            }
+
+            $albumModal.addClass('show').attr({
+                'aria-hidden': 'false',
+                'aria-modal': 'true',
+                role: 'dialog'
+            }).css('display', 'block');
+            $('body').addClass('modal-open').css('overflow', 'hidden');
+
+            if (!$('.modal-backdrop.travel-album-backdrop').length) {
+                $('<div>', {
+                    class: 'modal-backdrop fade show travel-album-backdrop'
+                }).appendTo(document.body);
+            }
+        };
+
+        $albumModal.on('click', '[data-bs-dismiss="modal"]', function() {
+            closeTravelAlbumModal();
+        });
+
+        $(document).on('keydown', function(event) {
+            if (event.key === 'Escape' && $albumModal.hasClass('show')) {
+                closeTravelAlbumModal();
+            }
+        });
 
         var loadTravelAlbumData = function() {
             if (travelAlbumData) {
@@ -217,7 +274,7 @@
             }
 
             if (!travelAlbumDataRequest) {
-                travelAlbumDataRequest = $.getJSON('data/travel-albums.json?v=20260512').done(function(data) {
+                travelAlbumDataRequest = $.getJSON('data/travel-albums.json?v=20260616').done(function(data) {
                     travelAlbumData = data;
                 });
             }
@@ -225,55 +282,170 @@
             return travelAlbumDataRequest;
         };
 
+        var safeHttpsUrl = function(url, allowedHosts) {
+            try {
+                var parsedUrl = new URL(url, window.location.href);
+
+                if (parsedUrl.protocol !== 'https:') {
+                    return null;
+                }
+
+                if (allowedHosts && allowedHosts.indexOf(parsedUrl.hostname) === -1) {
+                    return null;
+                }
+
+                return parsedUrl.href;
+            } catch (error) {
+                return null;
+            }
+        };
+
+        var renderPhotoGrid = function(album, albumUrl) {
+            var photos = album.photos || [];
+            var safeAlbumUrl = safeHttpsUrl(albumUrl, ['www.flickr.com']);
+
+            if (!photos.length || !safeAlbumUrl) {
+                return false;
+            }
+
+            var $toolbar = $('<div>', { class: 'travel-photo-toolbar' });
+            $('<span>').text(photos.length + ' selected photos').appendTo($toolbar);
+            $('<a>', {
+                href: safeAlbumUrl,
+                target: '_blank',
+                rel: 'noopener noreferrer'
+            }).text('Full album on Flickr').appendTo($toolbar);
+
+            var renderedPhotos = 0;
+            var $grid = $('<div>', { class: 'travel-photo-grid' });
+
+            photos.forEach(function(photo, index) {
+                var safePhotoSrc = safeHttpsUrl(photo.src, ['live.staticflickr.com']);
+
+                if (!safePhotoSrc) {
+                    return;
+                }
+
+                var $figure = $('<figure>', { class: 'travel-photo-item' });
+                $('<img>', {
+                    src: safePhotoSrc,
+                    alt: (photo.alt || album.country || 'Travel') + ' photo ' + (index + 1),
+                    loading: 'lazy'
+                }).appendTo($figure);
+                $figure.appendTo($grid);
+                renderedPhotos += 1;
+            });
+
+            if (!renderedPhotos) {
+                return false;
+            }
+
+            $albumBody.empty().append($toolbar, $grid);
+
+            return true;
+        };
+
         var loadFlickrEmbedScript = function() {
             var script = document.createElement('script');
+
             script.async = true;
             script.src = 'https://embedr.flickr.com/assets/client-code.js';
             script.charset = 'utf-8';
             document.body.appendChild(script);
         };
 
-        var renderAlbumEmbed = function(data, albumUrl) {
-            var embedHtml = data && data.html
-                ? data.html.replace(/<script[\s\S]*?<\/script>/gi, '')
-                : '<a data-flickr-embed="true" href="' + albumUrl + '">Open Flickr album</a>';
+        var renderFlickrEmbed = function(albumUrl, embedData) {
+            var safeAlbumUrl = safeHttpsUrl(
+                embedData && embedData.web_page ? embedData.web_page : albumUrl,
+                ['www.flickr.com']
+            );
+            var safeThumbnailUrl = embedData && embedData.thumbnail_url
+                ? safeHttpsUrl(embedData.thumbnail_url, ['live.staticflickr.com'])
+                : null;
+            var title = embedData && embedData.title ? embedData.title : 'Open Flickr album';
 
-            $albumBody.html('<div class="flickr-embed-shell">' + embedHtml + '</div>');
-            loadFlickrEmbedScript();
-        };
-
-        var renderPhotoGrid = function(album, albumUrl) {
-            var photos = album.photos || [];
-
-            if (!photos.length) {
+            if (!safeAlbumUrl) {
                 return false;
             }
 
-            var items = photos.map(function(photo, index) {
-                return '<figure class="travel-photo-item">' +
-                    '<img src="' + photo.src + '" alt="' + (photo.alt || album.country) + ' photo ' + (index + 1) + '" loading="lazy">' +
-                '</figure>';
-            }).join('');
+            var $shell = $('<div>', { class: 'flickr-embed-shell' });
+            var $embedLink = $('<a>', {
+                'data-flickr-embed': 'true',
+                href: safeAlbumUrl,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                title: title
+            });
 
-            $albumBody.html(
-                '<div class="travel-photo-toolbar">' +
-                    '<span>' + photos.length + ' selected photos</span>' +
-                    '<a href="' + albumUrl + '" target="_blank">Full album on Flickr</a>' +
-                '</div>' +
-                '<div class="travel-photo-grid">' + items + '</div>'
-            );
+            if (safeThumbnailUrl) {
+                $('<img>', {
+                    src: safeThumbnailUrl,
+                    alt: title,
+                    width: Math.min(Number(embedData.thumbnail_width) || 800, 1200),
+                    height: Math.min(Number(embedData.thumbnail_height) || 600, 900),
+                    loading: 'lazy'
+                }).appendTo($embedLink);
+            } else {
+                $embedLink.text('Open Flickr album');
+            }
+
+            $embedLink.appendTo($shell);
+
+            $albumBody.empty().append($shell);
+            loadFlickrEmbedScript();
 
             return true;
         };
 
+        var loadFlickrEmbed = function(code, albumUrl) {
+            if (albumEmbedCache[code]) {
+                if (!renderFlickrEmbed(albumUrl, albumEmbedCache[code])) {
+                    showAlbumError(albumUrl);
+                }
+
+                return;
+            }
+
+            $.ajax({
+                url: 'https://www.flickr.com/services/oembed/',
+                dataType: 'jsonp',
+                jsonp: 'jsoncallback',
+                data: {
+                    format: 'json',
+                    url: albumUrl,
+                    maxwidth: 1200,
+                    maxheight: 800
+                }
+            }).done(function(embedData) {
+                albumEmbedCache[code] = embedData;
+
+                if (!renderFlickrEmbed(albumUrl, embedData)) {
+                    showAlbumError(albumUrl);
+                }
+            }).fail(function() {
+                if (!renderFlickrEmbed(albumUrl)) {
+                    showAlbumError(albumUrl);
+                }
+            });
+        };
+
         var showAlbumError = function(albumUrl) {
-            $albumBody.html(
-                '<div class="travel-album-error">' +
-                    '<h6 class="mb-1">Album unavailable here</h6>' +
-                    '<p class="mb-0">Flickr could not load the embedded album. You can still open it directly.</p>' +
-                    '<a class="btn btn-primary mt-2 px-4" target="_blank" href="' + albumUrl + '">Open on Flickr</a>' +
-                '</div>'
-            );
+            var safeAlbumUrl = safeHttpsUrl(albumUrl, ['www.flickr.com']);
+            var $error = $('<div>', { class: 'travel-album-error' });
+
+            $('<h6>', { class: 'mb-1' }).text('Album unavailable here').appendTo($error);
+            $('<p>', { class: 'mb-0' }).text('Flickr could not load the selected photos. You can still open the album directly.').appendTo($error);
+
+            if (safeAlbumUrl) {
+                $('<a>', {
+                    class: 'btn btn-primary mt-2 px-4',
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    href: safeAlbumUrl
+                }).text('Open on Flickr').appendTo($error);
+            }
+
+            $albumBody.empty().append($error);
         };
 
         var showFlickrAlbum = function(code) {
@@ -286,46 +458,26 @@
 
             $albumTitle.text(countryName);
             $albumLink.attr('href', albumUrl);
-            $albumBody.html(
-                '<div class="travel-album-loading">' +
-                    '<div class="spinner-border text-primary" role="status"></div>' +
-                    '<strong>Loading ' + countryName + ' photos</strong>' +
-                    '<span>Fetching the Flickr album without leaving the site.</span>' +
-                '</div>'
-            );
 
-            if (travelAlbumModal) {
-                travelAlbumModal.show();
-            }
+            var $loading = $('<div>', { class: 'travel-album-loading' });
+            $('<div>', {
+                class: 'spinner-border text-primary',
+                role: 'status'
+            }).appendTo($loading);
+            $('<strong>').text('Loading ' + countryName + ' photos').appendTo($loading);
+            $('<span>').text('Loading selected photos without leaving the site.').appendTo($loading);
+            $albumBody.empty().append($loading);
+
+            openTravelAlbumModal();
 
             loadTravelAlbumData().done(function(data) {
                 if (data && data[code] && renderPhotoGrid(data[code], albumUrl)) {
                     return;
                 }
 
-                if (albumCache[code]) {
-                    renderAlbumEmbed(albumCache[code], albumUrl);
-                    return;
-                }
-
-                $.ajax({
-                    url: 'https://www.flickr.com/services/oembed/',
-                    dataType: 'jsonp',
-                    jsonp: 'jsoncallback',
-                    data: {
-                        format: 'json',
-                        url: albumUrl,
-                        maxwidth: 1200,
-                        maxheight: 800
-                    }
-                }).done(function(embedData) {
-                    albumCache[code] = embedData;
-                    renderAlbumEmbed(embedData, albumUrl);
-                }).fail(function() {
-                    showAlbumError(albumUrl);
-                });
+                loadFlickrEmbed(code, albumUrl);
             }).fail(function() {
-                showAlbumError(albumUrl);
+                loadFlickrEmbed(code, albumUrl);
             });
         };
 
@@ -335,9 +487,10 @@
                     return visitedCountries[a].localeCompare(visitedCountries[b]);
                 })
                 .forEach(function(code) {
-                    $('#travelCountryList').append(
-                        '<button type="button" data-code="' + code + '">' + visitedCountries[code] + '</button>'
-                    );
+                    $('<button>', {
+                        type: 'button',
+                        'data-code': code
+                    }).text(visitedCountries[code]).appendTo('#travelCountryList');
                 });
         }
 
@@ -368,6 +521,11 @@
                     fillOpacity: 1
                 }
             },
+            onRegionClick: function(event, code) {
+                if (visitedCountries[code]) {
+                    showFlickrAlbum(code);
+                }
+            },
             onRegionTooltipShow: function(event, tooltip, code) {
                 if (visitedCountries[code]) {
                     tooltip.text(visitedCountries[code] + ' - view photos');
@@ -375,8 +533,25 @@
             }
         });
 
-        $('#travelMap, #travelCountryList').on('click', '[data-code]', function() {
-            showFlickrAlbum($(this).attr('data-code'));
+        var travelMapElement = document.getElementById('travelMap');
+
+        if (travelMapElement) {
+            travelMapElement.addEventListener('click', function(event) {
+                var region = event.target.closest && event.target.closest('[data-code]');
+                var code = region && region.getAttribute('data-code');
+
+                if (visitedCountries[code]) {
+                    showFlickrAlbum(code);
+                }
+            });
+        }
+
+        $('#travelCountryList').on('click', '[data-code]', function() {
+            var code = $(this).attr('data-code');
+
+            if (visitedCountries[code]) {
+                showFlickrAlbum(code);
+            }
         });
     }
 
