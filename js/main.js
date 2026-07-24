@@ -148,6 +148,7 @@
         PT: 'Portugal',
         SE: 'Sweden',
         SG: 'Singapore',
+        SI: 'Slovenia',
         SK: 'Slovakia',
         SZ: 'Eswatini',
         TN: 'Tunisia',
@@ -194,6 +195,7 @@
         PT: 'https://www.flickr.com/photos/tazimehdi/albums/72157694916863795',
         SE: 'https://www.flickr.com/photos/tazimehdi/albums/72157693137738711',
         SG: 'https://www.flickr.com/photos/tazimehdi/albums/72157678482137570',
+        SI: 'https://www.flickr.com/photos/tazimehdi/albums/72177720334838288',
         SK: 'https://www.flickr.com/photos/tazimehdi/albums/72157691823642242',
         SZ: 'https://www.flickr.com/photos/tazimehdi/albums/72157676508667943',
         TN: 'https://www.flickr.com/photos/tazimehdi/albums/72157676356154694',
@@ -274,7 +276,7 @@
             }
 
             if (!travelAlbumDataRequest) {
-                travelAlbumDataRequest = $.getJSON('data/travel-albums.json?v=20260616').done(function(data) {
+                travelAlbumDataRequest = $.getJSON('data/travel-albums.json?v=20260724').done(function(data) {
                     travelAlbumData = data;
                 });
             }

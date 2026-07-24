@@ -1313,6 +1313,16 @@
       }
     ]
   },
+  "SI": {
+    "country": "Slovenia",
+    "albumUrl": "https://www.flickr.com/photos/tazimehdi/albums/72177720334838288",
+    "photos": [
+      {
+        "src": "https://live.staticflickr.com/65535/55414921097_00cf2512f8_c.jpg",
+        "alt": "Slovenia"
+      }
+    ]
+  },
   "SK": {
     "country": "Slovakia",
     "albumUrl": "https://www.flickr.com/photos/tazimehdi/albums/72157691823642242",
