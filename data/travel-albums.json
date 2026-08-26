@@ -1679,5 +1679,10 @@
         "alt": "South Africa"
       }
     ]
+  },
+  "_meta": {
+    "continents": {"AE":"Asia","AT":"Europe","BA":"Europe","BE":"Europe","BO":"South America","BR":"South America","CH":"Europe","CZ":"Europe","DE":"Europe","EE":"Europe","ES":"Europe","FI":"Europe","FR":"Europe","GA":"Africa","GB":"Europe","GR":"Europe","HK":"Asia","HR":"Europe","HU":"Europe","ID":"Asia","IR":"Asia","IT":"Europe","JO":"Asia","LT":"Europe","LU":"Europe","LV":"Europe","MA":"Africa","MC":"Europe","MO":"Asia","MY":"Asia","NL":"Europe","PE":"South America","PL":"Europe","PT":"Europe","SE":"Europe","SG":"Asia","SI":"Europe","SK":"Europe","SZ":"Africa","TN":"Africa","TR":"Asia","US":"North America","VA":"Europe","ZA":"Africa"},
+    "markers": {"MC":[43.7384,7.4246],"VA":[41.9029,12.4534],"LU":[49.8153,6.1296],"SG":[1.3521,103.8198],"HK":[22.3193,114.1694],"MO":[22.1987,113.5439],"SI":[46.1512,14.9955]},
+    "flagCodes": ["AE","AT","BA","BE","BO","BR","CH","CZ","DE","EE","ES","FI","FR","GA","GB","GR","HK","HR","HU","ID","IR","IT","JO","LT","LU","LV","MA","MC","MO","MY","NL","PE","PL","PT","SE","SG","SI","SK","SZ","TN","TR","US","VA","ZA"]
   }
 }

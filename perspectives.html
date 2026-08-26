@@ -21,7 +21,7 @@
     <link href="css/style.css?v=20260616-2" rel="stylesheet">
 </head>
 
-<body>
+<body class="travel-redesign">
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
@@ -60,11 +60,11 @@
                 <div class="col-lg-5">
                     <div class="travel-stats">
                         <div>
-                            <strong>44</strong>
+                            <strong id="travelCountryTotal">44</strong>
                             <span>countries visited</span>
                         </div>
                         <div>
-                            <strong>5</strong>
+                            <strong id="travelContinentTotal">5</strong>
                             <span>continents visited</span>
                         </div>
                         <div>
@@ -75,8 +75,49 @@
                 </div>
             </div>
             <div class="travel-map-card">
-                <div id="travelMap" class="travel-map" aria-label="World map with visited countries highlighted"></div>
-                <div id="travelCountryList" class="travel-map-fallback" aria-label="Visited countries list"></div>
+                <div class="travel-map-heading">
+                    <div>
+                        <p class="eyebrow mb-2">The map</p>
+                        <h2 class="h3 mb-1">A life in places</h2>
+                        <p class="travel-map-caption mb-0">Select a country to open its photo album.</p>
+                    </div>
+                    <div class="travel-map-legend" aria-label="Map legend">
+                        <span><i class="travel-legend-swatch travel-legend-swatch--visited"></i>Visited</span>
+                        <span><i class="travel-legend-swatch travel-legend-swatch--marker"></i>Album marker</span>
+                    </div>
+                </div>
+                <div class="travel-map-toolbar" role="toolbar" aria-label="Map controls">
+                    <button type="button" class="btn btn-sm btn-outline-dark" id="travelZoomIn" aria-label="Zoom in">+</button>
+                    <button type="button" class="btn btn-sm btn-outline-dark" id="travelZoomOut" aria-label="Zoom out">−</button>
+                    <button type="button" class="btn btn-sm btn-outline-dark" id="travelMapReset">Reset</button>
+                </div>
+                <div id="travelMap" class="travel-map" aria-label="World map with visited countries highlighted" aria-describedby="travelMapStatus"></div>
+                <p id="travelMapStatus" class="travel-map-status" role="status" aria-live="polite"></p>
+                <section class="travel-albums" aria-labelledby="travelAlbumsTitle">
+                    <div class="travel-albums-heading">
+                        <div>
+                            <p class="eyebrow mb-2">The albums</p>
+                            <h2 id="travelAlbumsTitle" class="h3 mb-1">Browse the collection</h2>
+                        </div>
+                        <span id="travelResultsCount" class="travel-results-count" aria-live="polite"></span>
+                    </div>
+                    <div class="travel-album-controls">
+                        <label class="travel-search" for="travelSearch">
+                            <span class="visually-hidden">Search countries</span>
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                            <input id="travelSearch" type="search" autocomplete="off" placeholder="Search a country" />
+                        </label>
+                        <div id="travelFilters" class="travel-filters" role="group" aria-label="Filter by continent">
+                            <button type="button" class="active" data-continent="all" aria-pressed="true">All</button>
+                            <button type="button" data-continent="Europe" aria-pressed="false">Europe</button>
+                            <button type="button" data-continent="Africa" aria-pressed="false">Africa</button>
+                            <button type="button" data-continent="Asia" aria-pressed="false">Asia</button>
+                            <button type="button" data-continent="Americas" aria-pressed="false">Americas</button>
+                        </div>
+                    </div>
+                    <div id="travelCountryList" class="travel-country-grid" aria-label="Visited countries list"></div>
+                    <p id="travelEmptyState" class="travel-empty-state" hidden>No country matches this search.</p>
+                </section>
             </div>
         </div>
     </div>
@@ -92,9 +133,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id="travelAlbumMeta" class="travel-album-meta"></div>
                     <div id="travelAlbumBody" class="travel-album-body"></div>
                 </div>
                 <div class="modal-footer">
+                    <div class="travel-album-nav" role="group" aria-label="Album navigation">
+                        <button type="button" id="travelAlbumPrevious" class="btn btn-sm btn-outline-dark">← Previous</button>
+                        <button type="button" id="travelAlbumNext" class="btn btn-sm btn-outline-dark">Next →</button>
+                    </div>
                     <a id="travelAlbumLink" href="https://www.flickr.com/photos/tazimehdi/albums/with/72157689185401220" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark px-4">Open on Flickr</a>
                 </div>
             </div>
@@ -129,5 +175,7 @@
     <script src="lib/jsvectormap/dist/js/jsvectormap.min.js"></script>
     <script src="lib/jsvectormap/dist/maps/world.js"></script>
     <script src="js/main.js?v=20260724"></script>
+    <script src="data/travel-albums.js?v=20260826-1"></script>
+    <script src="js/perspectives.js?v=20260826-8"></script>
 </body>
 </html>

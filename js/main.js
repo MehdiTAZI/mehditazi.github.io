@@ -205,7 +205,7 @@
         ZA: 'https://www.flickr.com/photos/tazimehdi/albums/72157679907052366'
     };
 
-    if ($('#travelMap').length && typeof jsVectorMap !== 'undefined') {
+    if ($('#travelMap').length && typeof jsVectorMap !== 'undefined' && !$('body').hasClass('travel-redesign')) {
         var visitedCodes = Object.keys(visitedCountries);
         var $albumModal = $('#travelAlbumModal');
         var $albumTitle = $('#travelAlbumTitle');
