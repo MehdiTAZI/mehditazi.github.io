@@ -336,9 +336,45 @@ html, body {
     box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
 }
 
+.hero-action {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: 0 1.15rem;
+    color: var(--dark);
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+    transition: .25s ease;
+}
+
+.hero-action:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.hero-action-primary {
+    color: #FFFFFF;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.hero-action-primary:hover {
+    color: #FFFFFF;
+    background: var(--dark);
+    border-color: var(--dark);
+}
+
 .hero-social:hover {
     color: #FFFFFF;
     background: var(--primary);
+    transform: translateY(-2px);
 }
 
 .hero-metrics {
@@ -792,41 +828,6 @@ html, body {
     border-radius: 18px;
 }
 
-.contact-cta-section {
-    background: #FFFFFF;
-}
-
-.contact-cta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    background: var(--dark);
-    border-radius: 24px;
-    box-shadow: 0 28px 80px rgba(15, 23, 42, .18);
-}
-
-.contact-cta h2,
-.contact-cta p {
-    color: #FFFFFF !important;
-}
-
-.contact-cta p:not(.eyebrow) {
-    color: rgba(255, 255, 255, .74) !important;
-}
-
-.contact-cta .btn-outline-dark {
-    color: #FFFFFF;
-    border-color: rgba(255, 255, 255, .72);
-}
-
-.contact-cta .btn-outline-dark:hover {
-    color: var(--dark);
-    background: #FFFFFF;
-    border-color: #FFFFFF;
-}
-
 .expertise-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1089,11 +1090,6 @@ html, body {
 
     .hero-metrics {
         grid-template-columns: 1fr;
-    }
-
-    .contact-cta {
-        align-items: flex-start;
-        flex-direction: column;
     }
 
     .venture-philosophy {
