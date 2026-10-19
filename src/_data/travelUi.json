@@ -1,0 +1,38 @@
+{
+  "en": {
+    "selected": "{country} selected. {photos}.",
+    "openAlbum": "Open {country} photo album",
+    "photoOne": "{count} photo",
+    "photoMany": "{count} photos",
+    "flickrAlbum": "Flickr album",
+    "results": "{visible} of {total} countries",
+    "selectedPhotoOne": "{count} selected photo",
+    "selectedPhotoMany": "{count} selected photos",
+    "fullAlbum": "Full album on Flickr",
+    "photoAlt": "{country} — photo {number}",
+    "noPhotos": "No selected photos yet",
+    "albumAvailable": "The album is available on Flickr.",
+    "loadError": "Albums could not be loaded right now. Please refresh to try again.",
+    "mapError": "The interactive map is unavailable. The full country collection remains available below.",
+    "marker": "album marker",
+    "continents": { "Europe": "Europe", "Africa": "Africa", "Asia": "Asia", "North America": "North America", "South America": "South America", "Other": "Other" }
+  },
+  "fr": {
+    "selected": "{country} : pays sélectionné. {photos}.",
+    "openAlbum": "Ouvrir l’album photo : {country}",
+    "photoOne": "{count} photo",
+    "photoMany": "{count} photos",
+    "flickrAlbum": "Album Flickr",
+    "results": "{visible} pays sur {total}",
+    "selectedPhotoOne": "{count} photo sélectionnée",
+    "selectedPhotoMany": "{count} photos sélectionnées",
+    "fullAlbum": "Album complet sur Flickr",
+    "photoAlt": "{country} — photo {number}",
+    "noPhotos": "Aucune photo sélectionnée pour le moment",
+    "albumAvailable": "L’album est disponible sur Flickr.",
+    "loadError": "Les albums n’ont pas pu être chargés. Actualisez la page pour réessayer.",
+    "mapError": "La carte interactive est indisponible. La liste complète des pays reste accessible ci-dessous.",
+    "marker": "repère d’album",
+    "continents": { "Europe": "Europe", "Africa": "Afrique", "Asia": "Asie", "North America": "Amérique du Nord", "South America": "Amérique du Sud", "Other": "Autre" }
+  }
+}

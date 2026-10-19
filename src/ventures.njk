@@ -1,0 +1,77 @@
+---
+layout: base.njk
+pageKey: ventures
+pageFile: ventures.html
+pagination:
+  data: languages
+  size: 1
+  alias: locale
+permalink: "{{ locale.prefix }}ventures.html"
+---
+{% set text = copy[locale.code][pageKey] %}
+<div class="container-xxl section-light ventures-page py-6">
+        <div class="container">
+            <div class="row g-5 align-items-center mb-5">
+                <div class="col-lg-8">
+                    <p class="eyebrow mb-3">{{ text.ventures }}</p>
+                    <h1 class="display-4 mb-4">{{ text.companiesInitiatives }}</h1>
+                    <p class="travel-lead mb-4">{{ text.aDedicatedSpaceForBusinessActivitiesConnectedTo }}</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="index.html" class="btn btn-primary px-4">{{ text.backToProfessionalProfile }}</a>
+                        <a href="mailto:mehdi@tazimehdi.com" class="btn btn-outline-dark px-4">{{ text.discussAnInitiative }}</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="venture-principles">
+                        <span>{{ text.focus }}</span>
+                        <strong>{{ text.usefulTechnologyPragmaticExecutionAndLongTermValue }}</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-4">
+                    <div class="business-item venture-card venture-detail-card h-100 p-4 p-lg-5">
+                        <div class="bg-icon mb-4">
+                            <i class="fa fa-brain fa-2x"></i>
+                        </div>
+                        <span class="venture-kicker">{{ text.advisoryDelivery }}</span>
+                        <h2 class="h4 mb-3">{{ text.brainlyze }}</h2>
+                        <p>{{ text.brainlyzeSupportsOrganizationsOnDataAIAndPlatform }}</p>
+                        <a href="https://brainlyze.com" target="_blank" rel="noopener noreferrer" class="venture-link">{{ text.visitBrainlyze }}</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="business-item venture-card venture-detail-card h-100 p-4 p-lg-5">
+                        <div class="bg-icon mb-4">
+                            <i class="fa fa-layer-group fa-2x"></i>
+                        </div>
+                        <span class="venture-kicker">{{ text.companyBuilding }}</span>
+                        <h2 class="h4 mb-3">{{ text.tAZIGROUP }}</h2>
+                        <p>{{ text.tAZIGROUPIsAnInvestmentHoldingCompanyThat }}</p>
+                        <a href="mailto:mehdi@tazimehdi.com" class="venture-link">{{ text.discussInitiatives }}</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="business-item venture-card venture-detail-card h-100 p-4 p-lg-5">
+                        <div class="bg-icon mb-4">
+                            <i class="fa fa-building fa-2x"></i>
+                        </div>
+                        <span class="venture-kicker">{{ text.investmentProject }}</span>
+                        <h2 class="h4 mb-3">{{ text.tAZIINVEST }}</h2>
+                        <p>{{ text.tAZIINVESTFocusesOnRealEstateProjectsWith }}</p>
+                        <a href="mailto:mehdi@tazimehdi.com" class="venture-link">{{ text.discussProjects }}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="venture-philosophy mt-5">
+                <div>
+                    <p class="eyebrow mb-3">{{ text.approach }}</p>
+                    <h2 class="mb-3">{{ text.aSoberViewOfEntrepreneurship }}</h2>
+                    <p class="mb-0">{{ text.theseInitiativesArePresentedAsContextNotAs }}</p>
+                </div>
+                <a href="index.html#home" class="btn btn-primary px-4">{{ text.getInTouch }}</a>
+            </div>
+        </div>
+    </div>

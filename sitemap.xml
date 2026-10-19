@@ -1,87 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.google.com/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>https://www.tazimehdi.com/</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.tazimehdi.com/#home</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.tazimehdi.com/#about</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.tazimehdi.com/#professional</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.tazimehdi.com/#business</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.tazimehdi.com/#personal</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.tazimehdi.com/#testimonial</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-    <url>
     <loc>https://tazimehdi.com/</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tazimehdi.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tazimehdi.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tazimehdi.com/"/>
   </url>
+
   <url>
-    <loc>https://tazimehdi.com/#home</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://tazimehdi.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tazimehdi.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tazimehdi.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tazimehdi.com/"/>
   </url>
+
   <url>
-    <loc>https://tazimehdi.com/#about</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://tazimehdi.com/ventures.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tazimehdi.com/ventures.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tazimehdi.com/fr/ventures.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tazimehdi.com/ventures.html"/>
   </url>
+
   <url>
-    <loc>https://tazimehdi.com/#professional</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://tazimehdi.com/fr/ventures.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tazimehdi.com/ventures.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tazimehdi.com/fr/ventures.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tazimehdi.com/ventures.html"/>
   </url>
+
   <url>
-    <loc>https://tazimehdi.com/#business</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://tazimehdi.com/perspectives.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tazimehdi.com/perspectives.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tazimehdi.com/fr/perspectives.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tazimehdi.com/perspectives.html"/>
   </url>
+
   <url>
-    <loc>https://tazimehdi.com/#personal</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://tazimehdi.com/fr/perspectives.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tazimehdi.com/perspectives.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tazimehdi.com/fr/perspectives.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tazimehdi.com/perspectives.html"/>
   </url>
-  <url>
-    <loc>https://tazimehdi.com/#testimonial</loc>
-    <lastmod>2023-01-02T15:11:00+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+
 </urlset>

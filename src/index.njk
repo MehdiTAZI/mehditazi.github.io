@@ -1,0 +1,451 @@
+---
+layout: base.njk
+pageKey: home
+pageFile: index.html
+pagination:
+  data: languages
+  size: 1
+  alias: locale
+permalink: "{{ locale.prefix }}index.html"
+---
+{% set text = copy[locale.code][pageKey] %}
+<!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid section-light hero-section mt-0" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center min-vh-100">
+                <div class="col-lg-7 py-6 pb-0 pt-lg-0">
+                    <p class="eyebrow mb-3">{{ text.dataCloudArchitecture }}</p>
+                    <h1 class="display-3 mb-4">{{ text.mehdiTAZI }}</h1>
+                    <h2 class="typed-text-output d-inline"></h2>
+                    <div class="typed-text d-none">{{ text.entrepreneurDataArchitectChiefTechnicalOfficerAuthor }}</div>
+                    <p class="hero-lead mt-4 mb-5">{{ text.iHelpCompaniesDesignGovernedScalableDataPlatforms }}</p>
+                    <div class="hero-actions d-flex flex-wrap align-items-center gap-3">
+                        <a href="#professional" class="hero-action hero-action-primary"><i class="bi bi-arrow-down-right"></i><span>{{ text.workWithMe }}</span></a>
+                        {% set downloadId = 'hero' %}{% include 'cv-download.njk' %}
+                        <div class="hero-social-links d-flex align-items-center gap-3">
+                            <a href="https://linkedin.tazimehdi.com/" target="_blank" rel="noopener noreferrer" class="hero-social" aria-label="{{ text.ariaLabelLinkedInProfile }}"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:mehdi@tazimehdi.com" class="hero-social" aria-label="{{ text.ariaLabelEmailMehdiTAZI }}"><i class="bi bi-envelope"></i></a>
+                            <a href="https://wa.me/33674290854" target="_blank" rel="noopener noreferrer" class="hero-social" aria-label="{{ text.ariaLabelWhatsApp336742908 }}"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="hero-metrics mt-5">
+                        <div><strong>15+</strong><span>{{ text.yearsInDataSystems }}</span></div>
+                        <div><strong>100+</strong><span>{{ text.iTProjectsDelivered }}</span></div>
+                        <div><strong>{{ text.author }}</strong><span>{{ text.booksAndTechnicalArticles }}</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="profile-panel">
+                        <img src="{{ assetRoot }}img/profile.jpeg" alt="{{ text.altMehdiTAZIProfile }}" class="profile-img mb-3">
+                        <div class="profile-note">
+                            <span>{{ text.currentFocus }}</span>
+                            <strong>{{ text.modernDataPlatformsGovernanceObservabilityAndCloudArchitecture }}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- About Start -->
+    <div class="container-xxl section-light about-section py-6" id="about">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <p class="eyebrow mb-3">{{ text.about }}</p>
+                    <h1 class="display-5 mb-5">{{ text.architectCTOAndTechnicalAdvisor }}</h1>
+                    <p class="mb-4">{{ text.iAmAnEntrepreneurChiefTechnicalOfficerAnd | safe }}</p>
+                    <p class="mb-4">{{ text.iHoldAnEngineeringDegreeInSoftwareEngineering | safe }}</p>
+                    <p class="mb-4">{{ text.asACTOIWorkOnTheLink }}</p>
+                    <p class="mb-4">{{ text.todayIHelpTeamsDefineTechnicalFunctionalAnd }}</p>
+                    <div class="expertise-tags mt-4">
+                        <span>{{ text.dataPlatformArchitecture }}</span>
+                        <span>{{ text.lakehouse }}</span>
+                        <span>{{ text.cloudMultiCloud }}</span>
+                        <span>{{ text.dataGovernance }}</span>
+                        <span>{{ text.observability }}</span>
+                        <span>{{ text.technicalLeadership }}</span>
+                        <span>{{ text.technicalStrategy }}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded about-photo" src="{{ assetRoot }}img/me-1.jpg" alt="{{ text.altTravelPhotographyByMehdiTAZI }}">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded about-photo" src="{{ assetRoot }}img/me-2.jpg" alt="{{ text.altTravelPhotographyByMehdiTAZI }}">
+                        </div>
+                    </div>
+                    <div class="about-note">
+                        <h5>{{ text.publicationsVenturesTravelNotes }}</h5>
+                        <p>{{ text.beyondConsultingAndArchitectureIWriteAndReview }}</p>
+                        <div class="d-flex flex-wrap gap-2 mt-3">
+                            <a href="ventures.html" class="btn btn-primary px-4">{{ text.exploreVentures }}</a>
+                            <a href="perspectives.html" class="btn btn-outline-dark px-4">{{ text.placesPerspectives }}</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-sm-3">
+                            <a href="https://www.amazon.com/Definitive-Guide-Data-Integration-integration/dp/1837631913" target="_blank" rel="noopener noreferrer"><img class="img-fluid rounded" src="{{ assetRoot }}img/definitiveguide_author.jpg" alt="{{ text.altBookAuthor }}"></a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://www.amazon.com/MongoDB-Java-Developers-Francesco-Marchioni/dp/1785280279" target="_blank" rel="noopener noreferrer"><img class="img-fluid rounded" src="{{ assetRoot }}img/mongodb_reviewer.jpg" alt="{{ text.altBookReviewer }}"></a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://medium.com/@mehdi.tazi" target="_blank" rel="noopener noreferrer"><img class="img-fluid rounded" src="{{ assetRoot }}img/medium_articles.png" alt="{{ text.altBookReviewer }}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Expertise Start -->
+    <div class="container-xxl section-light py-6 pb-5 " id="professional">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <p class="eyebrow mb-3">{{ text.expertise }}</p>
+                    <h1 class="display-5 mb-3">{{ text.professionalExpertise }}</h1>
+                    <p class="travel-lead mb-0">{{ text.aPracticalViewOfTheDomainsWhereI }}</p>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="years flex-shrink-0 text-center me-4">
+                            <h1 class="display-1 mb-0">14</h1>
+                            <h5 class="mb-0">{{ text.years }}</h5>
+                        </div>
+                        <h3 class="lh-base mb-0">{{ text.ofWorkingExperienceInDataDistributedSystems }}</h3>
+                    </div>
+	                    <p class="mb-4">{{ text.aFocusedViewOfTheProfessionalCapabilitiesI }}</p>
+	                    <h3 class="mb-4">{{ text.coreExpertise }}</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-project-diagram"></i></div>
+                            <div>
+                                <h6>{{ text.dataPlatformArchitecture2 }}</h6>
+                                <p>{{ text.lakehouseDataMeshGovernanceSecurityAndOperatingModels }}</p>
+                                <div class="expertise-card-tags"><span>{{ text.datalake }}</span><span>{{ text.lakehouse }}</span><span>{{ text.dataMesh }}</span><span>{{ text.governance }}</span></div>
+                            </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-cloud"></i></div>
+                            <div>
+                                <h6>{{ text.cloudHybridPlatforms }}</h6>
+                                <p>{{ text.architectureChoicesAcrossAWSAzureOnPremiseAnd }}</p>
+                                <div class="expertise-card-tags"><span>{{ text.aWS }}</span><span>{{ text.azure }}</span><span>{{ text.gCP }}</span><span>{{ text.cloudera }}</span><span>{{ text.hybrid }}</span></div>
+                            </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-stream"></i></div>
+                            <div>
+                                <h6>{{ text.distributedDataSystems }}</h6>
+                                <p>{{ text.batchStreamingStorageProcessingAndResilientDistributedPatterns }}</p>
+                                <div class="expertise-card-tags"><span>{{ text.spark }}</span><span>{{ text.kafka }}</span><span>{{ text.storage }}</span></div>
+                            </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-cogs"></i></div>
+                            <div>
+                                <h6>{{ text.industrialisationDevOps }}</h6>
+                                <p>{{ text.automationCICDInfrastructureAsCodeObservabilityAnd }}</p>
+                                <div class="expertise-card-tags"><span>{{ text.terraform }}</span><span>{{ text.cICD }}</span><span>{{ text.monitoring }}</span></div>
+                            </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-database"></i></div>
+                            <div>
+                                <h6>{{ text.dataEngineeringDelivery }}</h6>
+                                <p>{{ text.ingestionModelingTransformationQualityControlsAndConsumptionLayers }}</p>
+                                <div class="expertise-card-tags"><span>{{ text.modeling }}</span><span>{{ text.dataQuality }}</span><span>{{ text.controls }}</span><span>{{ text.aPIs }}</span></div>
+                            </div>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="expertise-card-icon"><i class="fa fa-users-cog"></i></div>
+                            <div>
+                                <h6>{{ text.cTOTechnicalLeadership }}</h6>
+                                <p>{{ text.technologyStrategyRoadmapFramingArchitectureGovernanceTeamEnablement }}</p>
+                                <div class="expertise-card-tags"><span>{{ text.cTO }}</span><span>{{ text.roadmap }}</span><span>{{ text.governance }}</span></div>
+                            </div>
+                        </div>
+                    </div>
+	                    <div class="profile-links mt-5">
+	                        <h6 class="mb-3">{{ text.professionalLinks }}</h6>
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="https://blog.tazimehdi.com" aria-label="{{ text.ariaLabelMedium }}"><i class="fab fa-medium"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="https://github.tazimehdi.com" aria-label="{{ text.ariaLabelGitHub }}"><i class="fab fa-github"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="https://linkedin.tazimehdi.com/" aria-label="{{ text.ariaLabelLinkedIn }}"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="https://author.tazimehdi.com" aria-label="{{ text.ariaLabelAmazonAuthorPage }}"><i class="fab fa-amazon"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="https://brainlyze.com" aria-label="{{ text.ariaLabelBrainlyze }}"><i class="bi bi-window"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="mailto:mehdi@tazimehdi.com" aria-label="{{ text.ariaLabelEmail }}"><i class="bi bi-envelope"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="tel:+33674290854" aria-label="{{ text.ariaLabelPhone }}"><i class="bi bi-telephone"></i></a>
+                            <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="https://phone.tazimehdi.com" aria-label="{{ text.ariaLabelWhatsApp }}"><i class="fab fa-whatsapp"></i></a>
+                            {% set downloadId = 'profile' %}{% include 'cv-download.njk' %}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+	                    <ul class="nav nav-pills justify-content-start flex-wrap rounded border border-2 border-primary mb-5">
+	                        <li class="nav-item flex-grow-1 text-center">
+	                            <button class="nav-link px-1 py-2 fs-7 active" data-bs-toggle="pill" href="#tab-1">{{ text.experience }}</button>
+                        </li>
+                        <li class="nav-item flex-grow-1 text-center">
+                            <button class="nav-link px-1 py-2 fs-7" data-bs-toggle="pill" href="#tab-2">{{ text.education }}</button>
+                        </li>
+                        <li class="nav-item flex-grow-1 text-center">
+                            <button class="nav-link px-1 py-2 fs-7" data-bs-toggle="pill" href="#tab-3">{{ text.architecture }}</button>
+                        </li>
+                        <li class="nav-item flex-grow-1 text-center">
+                            <button class="nav-link px-1 py-2 fs-7" data-bs-toggle="pill" href="#tab-4">{{ text.management }}</button>
+                        </li>
+                        <li class="nav-item flex-grow-1 text-center">
+                            <button class="nav-link px-1 py-2 fs-7" data-bs-toggle="pill" href="#tab-5">{{ text.technologies }}</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row gy-5 gx-4">
+                                <div class="col-sm-6">
+                                    <h5>{{ text.ariaLabelBrainlyze }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">{{ text.text2017Present }}</p>
+                                    <h6 class="mb-0">{{ text.founder }}</h6>
+                                    <p class="skills-small-text">{{ text.leadingTheCompanyAndManagingConsultingAndTraining }}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>{{ text.decathlon }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">2022 - 2027</p>
+                                    <h6 class="mb-0">{{ text.seniorDataArchitectCTO }}</h6>
+                                    <p class="skills-small-text">{{ text.designingTheDataPlatformArchitectureAndRoadmapValidating }}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>{{ text.engie }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">2018 - 2022</p>
+                                    <h6 class="mb-0">{{ text.principalBigDataCloudArchitect }}</h6>
+                                    <p class="skills-small-text">{{ text.designedTheDataPlatformImplementedCoreFeaturesAnd }}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>{{ text.aXA }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">2017 - 2018</p>
+                                    <h6 class="mb-0">{{ text.seniorBigDataArchitect }}</h6>
+                                    <p class="skills-small-text">{{ text.administeredAXAClouderaClustersDesignedDevOpsAndAutomation }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="row gy-5 gx-4">
+                                <div class="col-sm-6">
+                                    <h5>{{ text.phDStudentIoT }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">2016 - </p>
+                                    <h6 class="mb-0">{{ text.uPECPARISEST }}</h6>
+                                    <p class="skills-small-text">{{ text.thesisInternetOfThingsVirtualizationForCyberPhysical | safe }}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>{{ text.master2MIAGE }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">2010 - 2011</p>
+                                    <h6 class="mb-0">{{ text.uPECPARISESTISIDIS }}</h6>
+                                    <p class="skills-small-text">{{ text.specializedInDistributedInformationSystemsAndManagement }}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>{{ text.softwareEngineering }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">2006 - 2010</p>
+                                    <h6 class="mb-0">{{ text.eSISA }}</h6>
+                                    <p class="skills-small-text">{{ text.specializedInSoftwareEngineering }}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>{{ text.certifications }}</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">2000 - 2045</p>
+                                    <h6 class="mb-0">{{ text.text15Certifications }}</h6>
+                                    <p class="skills-small-text">{{ text.obtainedCertificationsInAWSHadoopDataScienceMongoDB }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-3" class="tab-pane fade show p-0">
+                            <div class="row gy-5 gx-4">
+                                 <div class="card-body col-sm-12">
+                                    <p>{{ text.dataPlatformDesignArchitectureConsultingAndDesigningData | safe }}</p>
+
+                                    <p>{{ text.integrationHighAvailabilityDesigningAndIntegratingExistingSystems | safe }}</p>
+
+                                    <p>{{ text.dataLayerDesignEngineeringDesigningDataPlatformStorage | safe }}</p>
+
+                                    <p>{{ text.automationDevOpsIndustrializationLeadingTheIndustrializationAndAutomation | safe }}</p>
+
+                                    <p>{{ text.requirementsMonitoringObservabilityCollectingBusinessRequirementsAndSetting | safe }}</p>
+
+                                    <p>{{ text.technicalWritingPresentationsEngagingInPreSalesActivities | safe }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-4" class="tab-pane fade show p-0">
+                            <div class="row gy-5 gx-4">
+                                <div class="card-body col-sm-12">
+                                    <p>{{ text.accompanyTeamsAccompanyTeamsSettingUpOnboardingTheir | safe }}</p>
+
+                                    <p>{{ text.leadershipPlanningCoachLeadEstimatePlanOrganizeAnd | safe }}</p>
+
+                                    <p>{{ text.teamCoordinationAnimateMeetingsAndMotivateTeamsFacilitate | safe }}</p>
+
+                                    <p>{{ text.communicationCommunicateOnTheGoalsVisionsAndWrite | safe }}</p>
+
+                                    <p>{{ text.releaseBacklogManagementPrepareTheReleasesIterationsAnd | safe }}</p>
+
+                                    <p>{{ text.productBreakdownSplitTheProductIntoUseCases | safe }}</p>
+
+                                    <p>{{ text.resourceManagementEstablishmentOfResourcesAvailabilityAndOf | safe }}</p>
+
+                                    <p>{{ text.indicatorsGeneratingIndicatorsLikeBurnUpDownChartsTeam | safe }}</p>
+
+                                    <p>{{ text.riskManagementIdentificationsAndRisksManagement | safe }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-5" class="tab-pane fade show p-0">
+                            <div class="row gy-5 gx-4">
+                                <div class="card-body col-sm-12">
+
+                                    <p>{{ text.platformsAWSAzureDatabricksDataikuClouderaConfluentAiven | safe }}</p>
+
+                                    <p>{{ text.storageFormatNOSQLCassandraMongoDBDynamoDBCosmosDBHBase | safe }}</p>
+
+                                    <p>{{ text.processingStreamingKafkaKinesisEventHubSparkHADOOPAWS | safe }}</p>
+
+                                    <p>{{ text.consumptionExpositionAthenaImpalaTrinoPrestoGraphQLREST | safe }}</p>
+
+                                    <p>{{ text.automationSchedulingDockerAirflowAnsibleCloudFormationAzureDevOPS | safe }}</p>
+
+                                    <p>{{ text.environmentsOnPremiseCloudMultiCloudHybridArchitectures | safe }}</p>
+
+                                    <p>{{ text.languagesPythonScalaJavaSQLCQLJS | safe }}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+	        </div>
+	    </div>
+    </div>
+    <!-- Expertise End -->
+
+
+    <!-- Testimonials Start -->
+    <div class="container-xxl section-light py-5 my-5" id="testimonial">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 text-center mb-2 wow fadeInUp" data-wow-delay="0.1s">{{ text.testimonials }}</h1>
+            <p class="text-center text-muted mb-5 wow fadeInUp" data-wow-delay="0.2s">{{ text.viewAllRecommendationsOnLinkedIn | safe }}</p>
+            {% if common.testimonialsTranslationNote %}<p class="text-center small text-muted mb-4">{{ common.testimonialsTranslationNote }}</p>{% endif %}
+            <div class="row justify-content-center">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="testimonial-left h-100">
+                        <img class="img-fluid wow fadeIn testimonial-company-logo" data-wow-delay="0.1s" src="{{ assetRoot }}img/company-logos/decathlon.png" alt="{{ text.altDecathlonLogo }}">
+                        <img class="img-fluid wow fadeIn testimonial-company-logo" data-wow-delay="0.3s" src="{{ assetRoot }}img/company-logos/axa.png" alt="{{ text.altAXALogo }}">
+                        <img class="img-fluid wow fadeIn testimonial-company-logo" data-wow-delay="0.5s" src="{{ assetRoot }}img/company-logos/cgi.jpg" alt="{{ text.altCGILogo }}">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ assetRoot }}img/recommendations/thierrygrima.jpg" alt="{{ text.altPortraitDeThierryGrima }}">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic">{{ text.mehdiIsATalentedReliableAndExtremelyKnowledgeable }}</p>
+                            <hr class="w-25 mx-auto">
+                            <div class="company-line"><img class="company-logo" src="{{ assetRoot }}img/company-logos/axa.png" alt="{{ text.altAXALogo }}"><h5>{{ text.aXA }}</h5></div>
+                            <span><a href="https://www.linkedin.com/in/thierrygrima/" target="_blank" rel="noopener noreferrer">{{ text.thierryGrima }}</a> {{ text.cIODataInnovationLab }}</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ assetRoot }}img/recommendations/christophehengrivot.jpg" alt="{{ text.altPortraitDeChristopheHENGRIVOT }}">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic">{{ text.weWorkedTogetherOnTheDesignOfAn | safe }}</p>
+                            <hr class="w-25 mx-auto">
+                            <div class="company-line"><img class="company-logo company-logo-cgi" src="{{ assetRoot }}img/company-logos/cgi.jpg" alt="{{ text.altCGILogo }}"><img class="company-logo company-logo-umanis" src="{{ assetRoot }}img/company-logos/umanis.png" alt="{{ text.altUmanisLogo }}"><h5>{{ text.cGIUmanis }}</h5></div>
+                            <span><a href="https://www.linkedin.com/in/christophehengrivot/" target="_blank" rel="noopener noreferrer">{{ text.christopheHENGRIVOT }}</a> {{ text.dataPracticeManager }}</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ assetRoot }}img/recommendations/raphaelmansuy.jpg" alt="{{ text.altPortraitDeRaphaelMansuy }}">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic">{{ text.iRecommendMehdiTAZIWithoutReservationWeWere | safe }}</p>
+                            <hr class="w-25 mx-auto">
+                            <div class="company-line"><img class="company-logo" src="{{ assetRoot }}img/company-logos/capgemini.png" alt="{{ text.altCapgeminiLogo }}"><h5>{{ text.capgeminiInvent }}</h5></div>
+                            <span><a href="https://www.linkedin.com/in/raphaelmansuy/" target="_blank" rel="noopener noreferrer">{{ text.raphaelMANSUY }}</a> {{ text.dataIAArchitect }}</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ assetRoot }}img/recommendations/ruben-sastre-sedano-2b61489b.jpg" alt="{{ text.altPortraitDeRubenSastreSedano }}">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic">{{ text.iHadThePleasureOfWorkingAlongsideMehdi | safe }}</p>
+                            <hr class="w-25 mx-auto">
+                            <div class="company-line"><img class="company-logo" src="{{ assetRoot }}img/company-logos/decathlon.png" alt="{{ text.altDecathlonLogo }}"><h5>{{ text.decathlon }}</h5></div>
+                            <span><a href="https://www.linkedin.com/in/ruben-sastre-sedano-2b61489b/" target="_blank" rel="noopener noreferrer">{{ text.rubenSastreSedano }}</a> {{ text.staffDataEngineer }}</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ assetRoot }}img/recommendations/weijie-chen-07babb179.jpg" alt="{{ text.altPortraitDeWeijieChen }}">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic">{{ text.asPartOfEngieGlobalMarketSTrading }}</p>
+                            <hr class="w-25 mx-auto">
+                            <div class="company-line"><img class="company-logo" src="{{ assetRoot }}img/company-logos/engie.png" alt="{{ text.altENGIELogo }}"><h5>{{ text.eNGIEGlobalMarkets }}</h5></div>
+                            <span><a href="https://www.linkedin.com/in/weijie-chen-07babb179/" target="_blank" rel="noopener noreferrer">{{ text.weijieChen }}</a> {{ text.solutionArchitect }}</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="{{ assetRoot }}img/recommendations/mlucic.jpg" alt="{{ text.altPortraitDeMarkoLucic }}">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left text-primary"></i>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic">{{ text.mehdiParticipatedInTheDesignAndImplementationOf }}</p>
+                            <hr class="w-25 mx-auto">
+                            <div class="company-line"><img class="company-logo" src="{{ assetRoot }}img/company-logos/engie.png" alt="{{ text.altENGIELogo }}"><h5>{{ text.eNGIE }}</h5></div>
+                            <span><a href="https://www.linkedin.com/in/mlucic/" target="_blank" rel="noopener noreferrer">{{ text.markoLucic }}</a> {{ text.projectManager }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="testimonial-right h-100">
+                        <img class="img-fluid wow fadeIn testimonial-company-logo" data-wow-delay="0.1s" src="{{ assetRoot }}img/company-logos/umanis.png" alt="{{ text.altUmanisLogo }}">
+                        <img class="img-fluid wow fadeIn testimonial-company-logo" data-wow-delay="0.3s" src="{{ assetRoot }}img/company-logos/capgemini.png" alt="{{ text.altCapgeminiLogo }}">
+                        <img class="img-fluid wow fadeIn testimonial-company-logo" data-wow-delay="0.5s" src="{{ assetRoot }}img/company-logos/engie.png" alt="{{ text.altENGIELogo }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonials End -->

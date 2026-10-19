@@ -1,0 +1,32 @@
+{
+  "en": {
+    "loading": "Loading…",
+    "toggleNavigation": "Toggle navigation",
+    "navigation": { "contact": "Contact", "about": "About", "expertise": "Expertise", "testimonials": "Testimonials", "ventures": "Ventures", "perspectives": "Perspectives" },
+    "siteLanguage": "Site language",
+    "switchEnglish": "View this page in English",
+    "switchFrench": "Voir cette page en français",
+    "downloadCV": "Download CV",
+    "downloadDefault": "Download CV in English (PDF)",
+    "chooseCV": "Choose CV language (English by default)",
+    "rights": "All rights reserved.",
+    "footerNotes": { "home": "Designed by Mehdi TAZI.", "ventures": "Business initiatives and company-building context.", "perspectives": "Personal photography and travel notes." },
+    "backToTop": "Back to top",
+    "testimonialsTranslationNote": ""
+  },
+  "fr": {
+    "loading": "Chargement…",
+    "toggleNavigation": "Ouvrir ou fermer le menu",
+    "navigation": { "contact": "Contact", "about": "À propos", "expertise": "Expertise", "testimonials": "Recommandations", "ventures": "Entreprises", "perspectives": "Perspectives" },
+    "siteLanguage": "Langue du site",
+    "switchEnglish": "View this page in English",
+    "switchFrench": "Voir cette page en français",
+    "downloadCV": "Télécharger CV",
+    "downloadDefault": "Télécharger le CV en français (PDF)",
+    "chooseCV": "Choisir la langue du CV (français par défaut)",
+    "rights": "Tous droits réservés.",
+    "footerNotes": { "home": "Conçu par Mehdi TAZI.", "ventures": "Initiatives entrepreneuriales et développement d’entreprises.", "perspectives": "Photographies personnelles et carnets de voyage." },
+    "backToTop": "Retour en haut de page",
+    "testimonialsTranslationNote": "Traductions françaises ; les recommandations d’origine sont accessibles sur LinkedIn."
+  }
+}

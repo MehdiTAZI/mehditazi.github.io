@@ -1,0 +1,113 @@
+---
+layout: base.njk
+pageKey: perspectives
+pageFile: perspectives.html
+pagination:
+  data: languages
+  size: 1
+  alias: locale
+permalink: "{{ locale.prefix }}perspectives.html"
+---
+{% set text = copy[locale.code][pageKey] %}
+<div class="container-xxl section-light travel-section py-6 perspectives-page">
+        <div class="container">
+            <div class="row g-5 align-items-center mb-4">
+                <div class="col-lg-7">
+                    <p class="eyebrow mb-3">{{ text.beyondWork }}</p>
+                    <h1 class="display-4 mb-4">{{ text.placesPerspectives }}</h1>
+                    <p class="travel-lead mb-4">{{ text.aSeparatePersonalSpaceForTravelPhotographyAnd }}</p>
+                    <p class="small text-muted mb-4">{{ text.workInProgressNewPlacesAndAlbumsAre | safe }}</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="index.html" class="btn btn-primary px-4">{{ text.backToProfessionalProfile }}</a>
+                        <a href="https://www.flickr.com/photos/tazimehdi/albums/with/72157689185401220" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark px-4">{{ text.viewAllAlbums }}</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="travel-stats">
+                        <div>
+                            <strong id="travelCountryTotal">{{ travel | countryCount }}</strong>
+                            <span>{{ text.countriesVisited }}</span>
+                        </div>
+                        <div>
+                            <strong id="travelContinentTotal">5</strong>
+                            <span>{{ text.continentsVisited }}</span>
+                        </div>
+                        <div>
+                            <strong>{{ text.gallery }}</strong>
+                            <span>{{ text.opensInsideTheSite }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="travel-map-card">
+                <div class="travel-map-heading">
+                    <div>
+                        <p class="eyebrow mb-2">{{ text.theMap }}</p>
+                        <h2 class="h3 mb-1">{{ text.aLifeInPlaces }}</h2>
+                        <p class="travel-map-caption mb-0">{{ text.selectACountryToOpenItsPhotoAlbum }}</p>
+                    </div>
+                    <div class="travel-map-legend" aria-label="{{ text.ariaLabelMapLegend }}">
+                        <span><i class="travel-legend-swatch travel-legend-swatch--visited"></i>{{ text.visited }}</span>
+                        <span><i class="travel-legend-swatch travel-legend-swatch--marker"></i>{{ text.albumMarker }}</span>
+                    </div>
+                </div>
+                <div class="travel-map-toolbar" role="toolbar" aria-label="{{ text.ariaLabelMapControls }}">
+                    <button type="button" class="btn btn-sm btn-outline-dark" id="travelZoomIn" aria-label="{{ text.ariaLabelZoomIn }}">+</button>
+                    <button type="button" class="btn btn-sm btn-outline-dark" id="travelZoomOut" aria-label="{{ text.ariaLabelZoomOut }}">−</button>
+                    <button type="button" class="btn btn-sm btn-outline-dark" id="travelMapReset">{{ text.reset }}</button>
+                </div>
+                <div id="travelMap" class="travel-map" aria-label="{{ text.ariaLabelWorldMapWithVisitedCountriesHighlighted }}" aria-describedby="travelMapStatus"></div>
+                <p id="travelMapStatus" class="travel-map-status" role="status" aria-live="polite"></p>
+                <section class="travel-albums" aria-labelledby="travelAlbumsTitle">
+                    <div class="travel-albums-heading">
+                        <div>
+                            <p class="eyebrow mb-2">{{ text.theAlbums }}</p>
+                            <h2 id="travelAlbumsTitle" class="h3 mb-1">{{ text.browseTheCollection }}</h2>
+                        </div>
+                        <span id="travelResultsCount" class="travel-results-count" aria-live="polite"></span>
+                    </div>
+                    <div class="travel-album-controls">
+                        <label class="travel-search" for="travelSearch">
+                            <span class="visually-hidden">{{ text.searchCountries }}</span>
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                            <input id="travelSearch" type="search" autocomplete="off" placeholder="{{ text.placeholderSearchACountry }}" />
+                        </label>
+                        <div id="travelFilters" class="travel-filters" role="group" aria-label="{{ text.ariaLabelFilterByContinent }}">
+                            <button type="button" class="active" data-continent="all" aria-pressed="true">{{ text.all }}</button>
+                            <button type="button" data-continent="Europe" aria-pressed="false">{{ text.europe }}</button>
+                            <button type="button" data-continent="Africa" aria-pressed="false">{{ text.africa }}</button>
+                            <button type="button" data-continent="Asia" aria-pressed="false">{{ text.asia }}</button>
+                            <button type="button" data-continent="Americas" aria-pressed="false">{{ text.americas }}</button>
+                        </div>
+                    </div>
+                    <div id="travelCountryList" class="travel-country-grid" aria-label="{{ text.ariaLabelVisitedCountriesList }}" data-load-error="{{ travelUi[locale.code].loadError }}"></div>
+                    <p id="travelEmptyState" class="travel-empty-state" hidden>{{ text.noCountryMatchesThisSearch }}</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade travel-album-modal" id="travelAlbumModal" tabindex="-1" aria-labelledby="travelAlbumTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <p class="eyebrow mb-2">{{ text.photoAlbum }}</p>
+                        <h5 class="modal-title" id="travelAlbumTitle">{{ text.placesPerspectives }}</h5>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ text.ariaLabelClose }}"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="travelAlbumMeta" class="travel-album-meta"></div>
+                    <div id="travelAlbumBody" class="travel-album-body"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="travel-album-nav" role="group" aria-label="{{ text.ariaLabelAlbumNavigation }}">
+                        <button type="button" id="travelAlbumPrevious" class="btn btn-sm btn-outline-dark">{{ text.previous }}</button>
+                        <button type="button" id="travelAlbumNext" class="btn btn-sm btn-outline-dark">{{ text.next }}</button>
+                    </div>
+                    <a id="travelAlbumLink" href="https://www.flickr.com/photos/tazimehdi/albums/with/72157689185401220" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark px-4">{{ text.openOnFlickr }}</a>
+                </div>
+            </div>
+        </div>
+    </div>

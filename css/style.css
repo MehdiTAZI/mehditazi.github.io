@@ -336,6 +336,10 @@ html, body {
     box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
 }
 
+.hero-social-links {
+    flex-shrink: 0;
+}
+
 .hero-action {
     min-height: 48px;
     display: inline-flex;
@@ -351,6 +355,62 @@ html, body {
     font-weight: 700;
     letter-spacing: .01em;
     transition: .25s ease;
+}
+
+.site-language-switcher {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    flex-shrink: 0;
+    width: max-content;
+    gap: .15rem;
+    padding: .2rem .3rem;
+    color: var(--muted);
+    background: #F1F6FC;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+
+.site-language-switcher > i {
+    margin: 0 .15rem 0 .35rem;
+    font-size: .85rem;
+}
+
+.site-language-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 36px;
+    padding: .25rem;
+    color: var(--muted);
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.site-language-link:hover,
+.site-language-link.is-current {
+    color: var(--primary);
+    background: #FFFFFF;
+}
+
+.site-language-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.site-language-divider {
+    width: 1px;
+    height: 14px;
+    background: var(--border);
+}
+
+@media (max-width: 991.98px) {
+    .site-language-link {
+        min-width: 44px;
+        min-height: 44px;
+    }
 }
 
 .hero-action:hover {

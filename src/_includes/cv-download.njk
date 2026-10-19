@@ -1,0 +1,9 @@
+{% set cvFile = 'Mehdi-TAZI-resume-international-fr.pdf' if locale.code == 'fr' else 'Mehdi-TAZI-resume-abstract-en.pdf' %}
+<div class="resume-download-group dropdown" role="group" aria-label="{{ common.downloadCV }}">
+    <a href="{{ assetRoot }}resources/{{ cvFile }}" class="resume-download-link" download="Mehdi-TAZI-resume-{{ locale.code }}.pdf" aria-label="{{ common.downloadDefault }}"><i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i><span>{{ common.downloadCV }}</span></a>
+    <button class="resume-language-toggle" type="button" id="{{ downloadId }}-cv-language" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="{{ downloadId }}-cv-languages" aria-label="{{ common.chooseCV }}">{{ locale.code | upper }}</button>
+    <ul class="dropdown-menu dropdown-menu-end resume-language-menu" id="{{ downloadId }}-cv-languages" aria-labelledby="{{ downloadId }}-cv-language">
+        <li><a class="dropdown-item" href="{{ assetRoot }}resources/Mehdi-TAZI-resume-abstract-en.pdf" download="Mehdi-TAZI-resume-en.pdf" lang="en"><span>English</span><span class="resume-file-type">PDF</span></a></li>
+        <li><a class="dropdown-item" href="{{ assetRoot }}resources/Mehdi-TAZI-resume-international-fr.pdf" download="Mehdi-TAZI-resume-fr.pdf" lang="fr"><span>Français</span><span class="resume-file-type">PDF</span></a></li>
+    </ul>
+</div>
