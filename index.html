@@ -38,7 +38,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css?v=20260616-2" rel="stylesheet">
+    <link href="css/style.css?v=20261019-1" rel="stylesheet">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
@@ -81,9 +81,16 @@
                     <h2 class="typed-text-output d-inline"></h2>
                     <div class="typed-text d-none">Entrepreneur, Data Architect, Chief Technical Officer, Author</div>
                     <p class="hero-lead mt-4 mb-5">I help companies design governed, scalable data platforms across cloud, lakehouse and distributed systems environments.</p>
-                    <div class="d-flex flex-wrap align-items-center gap-3">
+                    <div class="hero-actions d-flex flex-wrap align-items-center gap-3">
                         <a href="#professional" class="hero-action hero-action-primary"><i class="bi bi-arrow-down-right"></i><span>Work with me</span></a>
-                        <a href="https://cv.tazimehdi.com" class="hero-action" download="Mehdi-TAZI-resume.pdf"><i class="bi bi-file-earmark-arrow-down"></i><span>Download resume</span></a>
+                        <div class="resume-download-group dropdown" role="group" aria-label="Download CV">
+                            <a href="resources/Mehdi-TAZI-resume-abstract-en.pdf" class="resume-download-link" download="Mehdi-TAZI-resume-en.pdf" aria-label="Download CV in English (PDF)"><i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i><span>Download CV</span></a>
+                            <button class="resume-language-toggle" type="button" id="hero-cv-language" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="hero-cv-languages" aria-label="Choose CV language (English by default)">EN</button>
+                            <ul class="dropdown-menu dropdown-menu-end resume-language-menu" id="hero-cv-languages" aria-labelledby="hero-cv-language">
+                                <li><a class="dropdown-item" href="resources/Mehdi-TAZI-resume-abstract-en.pdf" download="Mehdi-TAZI-resume-en.pdf" lang="en"><span>English</span><span class="resume-file-type">PDF</span></a></li>
+                                <li><a class="dropdown-item" href="resources/Mehdi-TAZI-resume-international-fr.pdf" download="Mehdi-TAZI-resume-fr.pdf" lang="fr"><span>Français</span><span class="resume-file-type">PDF</span></a></li>
+                            </ul>
+                        </div>
                         <a href="https://linkedin.tazimehdi.com/" target="_blank" rel="noopener noreferrer" class="hero-social" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
                         <a href="mailto:mehdi@tazimehdi.com" class="hero-social" aria-label="Email Mehdi TAZI"><i class="bi bi-envelope"></i></a>
                         <a href="https://wa.me/33674290854" target="_blank" rel="noopener noreferrer" class="hero-social" aria-label="WhatsApp: +33 6 74 29 08 54"><i class="fab fa-whatsapp"></i></a>
@@ -247,7 +254,14 @@
                             <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="mailto:mehdi@tazimehdi.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
                             <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="tel:+33674290854" aria-label="Phone"><i class="bi bi-telephone"></i></a>
                             <a class="btn btn-square btn-primary" target="_blank" rel="noopener noreferrer" href="https://phone.tazimehdi.com" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://cv.tazimehdi.com" class="btn btn-warning px-4" download="Mehdi-TAZI-resume.pdf">Download CV</a>
+                            <div class="resume-download-group dropdown" role="group" aria-label="Download CV">
+                                <a href="resources/Mehdi-TAZI-resume-abstract-en.pdf" class="resume-download-link" download="Mehdi-TAZI-resume-en.pdf" aria-label="Download CV in English (PDF)"><i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i><span>Download CV</span></a>
+                                <button class="resume-language-toggle" type="button" id="profile-cv-language" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="profile-cv-languages" aria-label="Choose CV language (English by default)">EN</button>
+                                <ul class="dropdown-menu dropdown-menu-end resume-language-menu" id="profile-cv-languages" aria-labelledby="profile-cv-language">
+                                    <li><a class="dropdown-item" href="resources/Mehdi-TAZI-resume-abstract-en.pdf" download="Mehdi-TAZI-resume-en.pdf" lang="en"><span>English</span><span class="resume-file-type">PDF</span></a></li>
+                                    <li><a class="dropdown-item" href="resources/Mehdi-TAZI-resume-international-fr.pdf" download="Mehdi-TAZI-resume-fr.pdf" lang="fr"><span>Français</span><span class="resume-file-type">PDF</span></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 

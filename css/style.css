@@ -371,6 +371,122 @@ html, body {
     border-color: var(--dark);
 }
 
+.resume-download-group {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+    min-height: 48px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    transition: border-color .2s ease;
+}
+
+.resume-download-group:hover,
+.resume-download-group:focus-within {
+    border-color: var(--primary);
+}
+
+.resume-download-link,
+.resume-language-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    color: var(--dark);
+    background: transparent;
+    font-size: .9rem;
+    font-weight: 700;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+.resume-download-link {
+    gap: .55rem;
+    padding: 0 1rem;
+    border-radius: 999px 0 0 999px;
+    white-space: nowrap;
+}
+
+.resume-language-toggle {
+    gap: .5rem;
+    min-width: 64px;
+    padding: 0 .85rem;
+    border: 0;
+    border-left: 1px solid var(--border);
+    border-radius: 0 999px 999px 0;
+    cursor: pointer;
+}
+
+.resume-language-toggle::after {
+    content: "";
+    width: .4rem;
+    height: .4rem;
+    margin-top: -.2rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.resume-download-link:hover,
+.resume-language-toggle:hover,
+.resume-language-toggle[aria-expanded="true"] {
+    color: var(--primary);
+    background: #F1F6FC;
+}
+
+.resume-download-link:focus-visible,
+.resume-language-toggle:focus-visible,
+.resume-language-menu .dropdown-item:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.resume-language-menu {
+    min-width: 190px;
+    padding: .4rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, .14);
+}
+
+.resume-language-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 44px;
+    padding: .6rem .75rem;
+    border-radius: 8px;
+    color: var(--dark);
+    font-size: .875rem;
+    font-weight: 600;
+}
+
+.resume-language-menu .dropdown-item:hover,
+.resume-language-menu .dropdown-item:focus {
+    color: var(--primary);
+    background: #F1F6FC;
+}
+
+.resume-file-type {
+    color: var(--muted);
+    font-size: .7rem;
+    font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+    .hero-actions > .hero-action,
+    .hero-actions > .resume-download-group {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-actions .resume-download-link {
+        flex: 1;
+    }
+}
+
 .hero-social:hover {
     color: #FFFFFF;
     background: var(--primary);
