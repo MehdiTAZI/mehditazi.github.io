@@ -1,5 +1,19 @@
 # Multilingual website — EN / FR
 
+## CV links — 2026-11-06
+
+User requested stable CV aliases: English `https://cv.tazimehdi.com`, French
+`https://cvfr.tazimehdi.com`. Both primary buttons follow the site language and
+both dropdown menus offer the two aliases. Destinations are maintained in
+`src/_data/cv.json`; no CV file is modified or deleted.
+
+The two aliases were checked over HTTPS: each redirects to its corresponding
+`resume-international-en.pdf` / `resume-international-fr.pdf` resource and returns
+HTTP 200 with `application/pdf`. Cross-origin links open in a new tab; no forced
+download is claimed. `npm run validate` passed for all six pages (226 local
+links), including both primary CV buttons and both language menus. The user
+authorized commit and push on 2026-11-06; this checkpoint precedes publication.
+
 ## Scope
 
 Approved: shared Eleventy templates, English at existing URLs, French under

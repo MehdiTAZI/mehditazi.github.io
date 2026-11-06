@@ -28,13 +28,17 @@ npm run validate
   doivent rester identiques dans les deux langues. Le balisage riche est réservé
   aux contenus rédigés dans ces fichiers, jamais à une saisie visiteur.
 - `src/_data/shared.json` : libellés communs.
+- `src/_data/cv.json` : adresses stables des CV : `https://cv.tazimehdi.com`
+  pour l’anglais et `https://cvfr.tazimehdi.com` pour le français.
 - `src/_data/travelUi.json` : messages de la carte. Les noms des pays français sont
   générés à partir de leurs codes ISO. Les codes et continents de filtrage restent
   des identifiants communs aux deux langues.
 - `data/travel-albums.json` : liens des albums, photos et données géographiques.
-- `resources/` : les deux PDF. Le téléchargement principal et son badge suivent
-  la langue du site : anglais sur EN, français sur FR. L’autre version reste
-  disponible dans le menu du bouton.
+- `resources/` : les PDF hébergés sur le site. Les boutons utilisent les adresses
+  stables ci-dessus, indépendamment du nom de ces fichiers. Le lien principal et
+  son badge suivent la langue du site : anglais sur EN, français sur FR. L’autre
+  version reste disponible dans le menu du bouton. Les liens ouvrent le PDF dans
+  un nouvel onglet ; son affichage ou enregistrement dépend du navigateur.
 
 ## Génération et publication
 

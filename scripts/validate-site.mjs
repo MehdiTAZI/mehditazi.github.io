@@ -6,6 +6,7 @@ import { parse, parseFragment } from 'parse5';
 
 const origin = `https://${(await readFile('CNAME', 'utf8')).trim()}`;
 const pages = ['index.html', 'ventures.html', 'perspectives.html'];
+const cvDestinations = { en: 'https://cv.tazimehdi.com', fr: 'https://cvfr.tazimehdi.com' };
 const documents = new Map();
 function nodes(root) { return [root, ...(root.childNodes || []).flatMap(nodes)]; }
 function attr(node, name) { return node.attrs?.find(item => item.name === name)?.value; }
@@ -51,9 +52,24 @@ for (const lang of ['en', 'fr']) {
         if (pageFile === 'index.html') {
             const cvLinks = all.filter(node => attr(node, 'class')?.split(' ').includes('resume-download-link'));
             assert.equal(cvLinks.length, 2);
-            const expectedCV = lang === 'fr' ? 'Mehdi-TAZI-resume-international-fr.pdf' : 'Mehdi-TAZI-resume-abstract-en.pdf';
-            assert.ok(cvLinks.every(node => attr(node, 'href').endsWith(expectedCV)), `Default CV must match the ${lang} page`);
-            assert.ok(cvLinks.every(node => attr(node, 'download') === `Mehdi-TAZI-resume-${lang}.pdf`));
+            assert.ok(cvLinks.every(node => attr(node, 'href') === cvDestinations[lang]), `Default CV must match the ${lang} page`);
+            const cvMenus = all.filter(node => attr(node, 'class')?.split(' ').includes('resume-language-menu'));
+            assert.equal(cvMenus.length, 2);
+            for (const menu of cvMenus) {
+                const options = nodes(menu).filter(node => node.tagName === 'a');
+                assert.equal(options.length, 2);
+                for (const choice of ['en', 'fr']) {
+                    assert.equal(attr(options.find(node => attr(node, 'lang') === choice), 'href'), cvDestinations[choice]);
+                }
+            }
+            const cvAnchors = [...cvLinks, ...cvMenus.flatMap(menu => nodes(menu).filter(node => node.tagName === 'a'))];
+            for (const link of cvAnchors) {
+                assert.equal(attr(link, 'target'), '_blank');
+                assert.ok(attr(link, 'rel')?.split(' ').includes('noopener'));
+                // Cross-origin aliases use normal PDF navigation; the download
+                // attribute cannot force a save across origins.
+                assert.equal(attr(link, 'download'), undefined);
+            }
             const cvToggles = all.filter(node => attr(node, 'class')?.split(' ').includes('resume-language-toggle'));
             assert.equal(cvToggles.length, 2);
             assert.ok(cvToggles.every(node => plain(node) === lang.toUpperCase()), `CV badge must match the ${lang} page`);
